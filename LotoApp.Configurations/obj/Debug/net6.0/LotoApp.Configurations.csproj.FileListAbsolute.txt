@@ -1,0 +1,12 @@
+C:\Users\Darko\source\repos\LotoApp\LotoApp.Configurations\bin\Debug\net6.0\LotoApp.Configurations.deps.json
+C:\Users\Darko\source\repos\LotoApp\LotoApp.Configurations\bin\Debug\net6.0\LotoApp.Configurations.dll
+C:\Users\Darko\source\repos\LotoApp\LotoApp.Configurations\bin\Debug\net6.0\LotoApp.Configurations.pdb
+C:\Users\Darko\source\repos\LotoApp\LotoApp.Configurations\obj\Debug\net6.0\LotoApp.Configurations.csproj.AssemblyReference.cache
+C:\Users\Darko\source\repos\LotoApp\LotoApp.Configurations\obj\Debug\net6.0\LotoApp.Configurations.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Darko\source\repos\LotoApp\LotoApp.Configurations\obj\Debug\net6.0\LotoApp.Configurations.AssemblyInfoInputs.cache
+C:\Users\Darko\source\repos\LotoApp\LotoApp.Configurations\obj\Debug\net6.0\LotoApp.Configurations.AssemblyInfo.cs
+C:\Users\Darko\source\repos\LotoApp\LotoApp.Configurations\obj\Debug\net6.0\LotoApp.Configurations.csproj.CoreCompileInputs.cache
+C:\Users\Darko\source\repos\LotoApp\LotoApp.Configurations\obj\Debug\net6.0\LotoApp.Configurations.dll
+C:\Users\Darko\source\repos\LotoApp\LotoApp.Configurations\obj\Debug\net6.0\refint\LotoApp.Configurations.dll
+C:\Users\Darko\source\repos\LotoApp\LotoApp.Configurations\obj\Debug\net6.0\LotoApp.Configurations.pdb
+C:\Users\Darko\source\repos\LotoApp\LotoApp.Configurations\obj\Debug\net6.0\ref\LotoApp.Configurations.dll

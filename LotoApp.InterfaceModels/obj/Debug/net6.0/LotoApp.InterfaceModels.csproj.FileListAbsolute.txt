@@ -1,0 +1,30 @@
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\bin\Debug\net6.0\LotoApp.InterfaceModels.deps.json
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\bin\Debug\net6.0\LotoApp.InterfaceModels.dll
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\bin\Debug\net6.0\LotoApp.InterfaceModels.pdb
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.csproj.AssemblyReference.cache
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.AssemblyInfoInputs.cache
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.AssemblyInfo.cs
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.csproj.CoreCompileInputs.cache
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.dll
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\refint\LotoApp.InterfaceModels.dll
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.pdb
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\ref\LotoApp.InterfaceModels.dll
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\bin\Debug\net6.0\LotoApp.Models.dll
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\bin\Debug\net6.0\LotoApp.Models.pdb
+C:\Users\Darko\source\repos\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.csproj.CopyComplete
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\bin\Debug\net6.0\LotoApp.InterfaceModels.deps.json
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\bin\Debug\net6.0\LotoApp.InterfaceModels.dll
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\bin\Debug\net6.0\LotoApp.InterfaceModels.pdb
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\bin\Debug\net6.0\LotoApp.Models.dll
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\bin\Debug\net6.0\LotoApp.Models.pdb
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.csproj.AssemblyReference.cache
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.AssemblyInfoInputs.cache
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.AssemblyInfo.cs
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.csproj.CoreCompileInputs.cache
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.csproj.CopyComplete
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.dll
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\refint\LotoApp.InterfaceModels.dll
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\LotoApp.InterfaceModels.pdb
+C:\Users\Darko\Desktop\SEDC ACADEMY\9. Web Api\LotoApp\LotoApp.InterfaceModels\obj\Debug\net6.0\ref\LotoApp.InterfaceModels.dll
