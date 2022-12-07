@@ -194,7 +194,7 @@ namespace LotoApp.Services.Implementations
                 while (exist)
                 {
                     exist = false;//we change it because until we didn't see the same value on array, we accept as non-exist.
-                    int x = rand.Next(1, 10) + 1;
+                    int x = rand.Next(1, 37) + 1;
 
                     for (int k = 0; k < i; k++)
                     {//we check everynumber until "i" we come.
@@ -297,14 +297,6 @@ namespace LotoApp.Services.Implementations
                                 LastName = user.LastName,
                                 Prize = (Prize)guessedNumbers,
 
-                                //Number_1 = drawnNumbers.Nums[0],
-                                //Number_2 = drawnNumbers.Nums[1],
-                                //Number_3 = drawnNumbers.Nums[2],
-                                //Number_4 = drawnNumbers.Nums[3],
-                                //Number_5 = drawnNumbers.Nums[4],
-                                //Number_6 = drawnNumbers.Nums[5],
-                                //Number_7 = drawnNumbers.Nums[6],
-
                                 Number_1 = userNums[0],
                                 Number_2 = userNums[1],
                                 Number_3 = userNums[2],
@@ -321,10 +313,13 @@ namespace LotoApp.Services.Implementations
                     }
                 }
             }
-            foreach (var item in winners)
-            {
-                winnerDtos.Add(WinnerMapper.ToWinnerDto(item));
-            }
+
+            winnerDtos = winners.Select(x => WinnerMapper.ToWinnerDto(x)).ToList();
+
+            //foreach (var item in winners)
+            //{
+            //    winnerDtos.Add(WinnerMapper.ToWinnerDto(item));
+            //}
             _appDbContext.Winners.AddRange(winnerDtos);
             _appDbContext.SaveChanges();
 
