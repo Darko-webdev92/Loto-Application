@@ -18,8 +18,6 @@
   <ItemGroup>
     <ProjectReference Include="..\LotoApp.Configurations\LotoApp.Configurations.csproj" />
     <ProjectReference Include="..\LotoApp.DAL\LotoApp.DAL.csproj" />
-    <ProjectReference Include="..\LotoApp.DomainModels\LotoApp.DomainModels.csproj" />
-    <ProjectReference Include="..\LotoApp.Mappers\LotoApp.Mappers.csproj" />
     <ProjectReference Include="..\LotoApp.Utilities\LotoApp.Utilities.csproj" />
   </ItemGroup>
 

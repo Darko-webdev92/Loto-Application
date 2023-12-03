@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace LotoApp.InterfaceModels
+namespace LotoApp.Models.ViewModels
 {
-    public class Ticket
+    public class TicketViewModel
     {
         [Range(1, 37, ErrorMessage = "Value for {0} must be between {1} and {2}.")]
         public int Number_1 { get; set; }

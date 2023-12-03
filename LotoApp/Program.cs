@@ -1,6 +1,6 @@
 using LotoApp.Configurations;
 using LotoApp.DAL;
-using LotoApp.DomainModels;
+using LotoApp.Models.Entities;
 using LotoApp.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -26,7 +26,7 @@ builder.Services.Configure<JwtConfig>(builder.Configuration.GetSection("JwtConfi
 
 
 // For Identity
-builder.Services.AddIdentity<ApplicationUserDto, IdentityRole>().AddRoles<IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddRoles<IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
 // Authentication with JWT

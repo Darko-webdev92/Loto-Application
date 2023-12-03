@@ -1,9 +1,9 @@
 ﻿using LotoApp.DAL;
-using LotoApp.DomainModels;
-using LotoApp.InterfaceModels;
-using LotoApp.InterfaceModels.Enums;
-using LotoApp.Mappers;
 using LotoApp.Models;
+using LotoApp.Models.Dto;
+using LotoApp.Models.Entities;
+using LotoApp.Models.Enums;
+using LotoApp.Models.ViewModels;
 using LotoApp.Services.Interfaces;
 
 namespace LotoApp.Services.Implementations
@@ -86,10 +86,10 @@ namespace LotoApp.Services.Implementations
 
         }
 
-        public List<Winner> StartDraw()
+        public List<WinnerViewModel> StartDraw()
         {
             //int[] nums = null;
-            List<Winner> winners = new List<Winner>();
+            List<WinnerViewModel> winners = new List<WinnerViewModel>();
 
             #region comment
             //var draws = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
@@ -250,10 +250,10 @@ namespace LotoApp.Services.Implementations
             };
         }
 
-        public List<Winner> WinningTickets(List<TicketDto> ticket, DrawnNumbers drawnNumbers)
+        public List<WinnerViewModel> WinningTickets(List<Ticket> ticket, DrawnNumbers drawnNumbers)
         {
-            List<Winner> winners = new List<Winner>();
-            List<WinnerDto> winnerDtos = new List<WinnerDto>();
+            List<WinnerViewModel> winners = new List<WinnerViewModel>();
+            List<Winner> winnerDtos = new List<Winner>();
 
             if (ticket != null)
             {
@@ -291,7 +291,7 @@ namespace LotoApp.Services.Implementations
                         var user = _appDbContext.Users.Where(x => x.Id == item.UserId).FirstOrDefault();
                         if (user != null)
                         {
-                            var winner = new Winner
+                            var winner = new WinnerViewModel
                             {
                                 FirstName = user.FirstName,
                                 LastName = user.LastName,

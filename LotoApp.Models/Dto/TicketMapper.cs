@@ -1,18 +1,13 @@
-﻿using LotoApp.DomainModels;
-using LotoApp.InterfaceModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LotoApp.Models.Entities;
+using LotoApp.Models.ViewModels;
 
-namespace LotoApp.Mappers
+namespace LotoApp.Models.Dto
 {
     public static class TicketMapper
     {
-        public static TicketDto ToTicketDto(Ticket ticket, string userId, Draw session)
+        public static Ticket ToTicketDto(TicketViewModel ticket, string userId, Draw session)
         {
-            return new TicketDto
+            return new Ticket
             {
                 Number_1 = ticket.Number_1,
                 Number_2 = ticket.Number_2,

@@ -1,14 +1,7 @@
-﻿using LotoApp.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace LotoApp.DomainModels
+namespace LotoApp.Models.Entities
 {
-    // author biography
     public class Draw : TicketNumbers
     {
         [Key]

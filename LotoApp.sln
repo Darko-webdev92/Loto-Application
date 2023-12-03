@@ -9,17 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotoApp.DAL", "LotoApp.DAL\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotoApp.Services", "LotoApp.Services\LotoApp.Services.csproj", "{88FE66C4-C5CE-4805-9ADF-A67F30E940B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotoApp.Mappers", "LotoApp.Mappers\LotoApp.Mappers.csproj", "{65730590-B4C5-45EE-9DEC-65ABE9487B31}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotoApp.DomainModels", "LotoApp.DomainModels\LotoApp.DomainModels.csproj", "{2F62C60B-DEA9-44AE-A685-0A597B288562}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotoApp.InterfaceModels", "LotoApp.InterfaceModels\LotoApp.InterfaceModels.csproj", "{3B662EA7-98DC-4DD5-B5D9-D08D7D765622}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotoApp.Utilities", "LotoApp.Utilities\LotoApp.Utilities.csproj", "{FB46E54E-6845-4D60-B201-E74741403B08}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotoApp.Configurations", "LotoApp.Configurations\LotoApp.Configurations.csproj", "{8983AE9B-25C5-4298-AE01-89BB30832BB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotoApp.Models", "LotoApp.Models\LotoApp.Models.csproj", "{44634E7C-D52F-4917-98E6-245551D1644C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotoApp.Models", "LotoApp.Models\LotoApp.Models.csproj", "{44634E7C-D52F-4917-98E6-245551D1644C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,18 +33,6 @@ Global
 		{88FE66C4-C5CE-4805-9ADF-A67F30E940B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88FE66C4-C5CE-4805-9ADF-A67F30E940B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88FE66C4-C5CE-4805-9ADF-A67F30E940B4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65730590-B4C5-45EE-9DEC-65ABE9487B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65730590-B4C5-45EE-9DEC-65ABE9487B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65730590-B4C5-45EE-9DEC-65ABE9487B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65730590-B4C5-45EE-9DEC-65ABE9487B31}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F62C60B-DEA9-44AE-A685-0A597B288562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F62C60B-DEA9-44AE-A685-0A597B288562}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F62C60B-DEA9-44AE-A685-0A597B288562}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F62C60B-DEA9-44AE-A685-0A597B288562}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B662EA7-98DC-4DD5-B5D9-D08D7D765622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B662EA7-98DC-4DD5-B5D9-D08D7D765622}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B662EA7-98DC-4DD5-B5D9-D08D7D765622}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B662EA7-98DC-4DD5-B5D9-D08D7D765622}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FB46E54E-6845-4D60-B201-E74741403B08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FB46E54E-6845-4D60-B201-E74741403B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB46E54E-6845-4D60-B201-E74741403B08}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -1,11 +1,7 @@
-﻿using LotoApp.DomainModels;
-using LotoApp.InterfaceModels;
+﻿using LotoApp.InterfaceModels;
 using LotoApp.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using LotoApp.Models.Entities;
+using LotoApp.Models.ViewModels;
 
 namespace LotoApp.Services.Interfaces
 {
@@ -14,10 +10,9 @@ namespace LotoApp.Services.Interfaces
         void StartSession();
         GameManagerResponse CheckSession();
         void EndSession();
-        List<Winner> StartDraw();
+        List<WinnerViewModel> StartDraw();
         int[] RandomArray();
         DrawnNumbers DrawNumbers();
-        List<Winner> WinningTickets(List<TicketDto> ticket, DrawnNumbers drawnNumbers);
-
+        List<WinnerViewModel> WinningTickets(List<Ticket> ticket, DrawnNumbers drawnNumbers);
     }
 }

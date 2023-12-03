@@ -1,19 +1,14 @@
-﻿using LotoApp.DomainModels;
-using LotoApp.InterfaceModels;
-using LotoApp.InterfaceModels.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LotoApp.Models.Entities;
+using LotoApp.Models.Enums;
+using LotoApp.Models.ViewModels;
 
-namespace LotoApp.Mappers
+namespace LotoApp.Models.Dto
 {
     public static class WinnerMapper
     {
-        public static WinnerDto ToWinnerDto(Winner winner)
+        public static Winner ToWinnerDto(WinnerViewModel winner)
         {
-            return new WinnerDto
+            return new Winner
             {
                 FirstName = winner.FirstName,
                 LastName = winner.LastName,
@@ -29,9 +24,9 @@ namespace LotoApp.Mappers
             };
         }
 
-        public static Winner ToWinner(WinnerDto winner)
+        public static WinnerViewModel ToWinner(Winner winner)
         {
-            return new Winner
+            return new WinnerViewModel
             {
                 FirstName = winner.FirstName,
                 LastName = winner.LastName,
