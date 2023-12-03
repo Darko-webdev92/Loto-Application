@@ -865,23 +865,12 @@
           }
         }
       },
-      "LotoApp.DomainModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "LotoApp.Models": "1.0.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.11"
-        },
-        "compile": {
-          "bin/placeholder/LotoApp.DomainModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LotoApp.DomainModels.dll": {}
-        }
-      },
       "LotoApp.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.11"
+        },
         "compile": {
           "bin/placeholder/LotoApp.Models.dll": {}
         },
@@ -2201,11 +2190,6 @@
         "version.txt"
       ]
     },
-    "LotoApp.DomainModels/1.0.0": {
-      "type": "project",
-      "path": "../LotoApp.DomainModels/LotoApp.DomainModels.csproj",
-      "msbuildProject": "../LotoApp.DomainModels/LotoApp.DomainModels.csproj"
-    },
     "LotoApp.Models/1.0.0": {
       "type": "project",
       "path": "../LotoApp.Models/LotoApp.Models.csproj",
@@ -2214,8 +2198,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "LotoApp.DomainModels >= 1.0.0",
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.11",
+      "LotoApp.Models >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.11",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.11",
       "Microsoft.EntityFrameworkCore.Relational >= 6.0.11",
@@ -2251,8 +2234,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\GitHub\\Loto-Application\\LotoApp.DomainModels\\LotoApp.DomainModels.csproj": {
-              "projectPath": "D:\\GitHub\\Loto-Application\\LotoApp.DomainModels\\LotoApp.DomainModels.csproj"
+            "D:\\GitHub\\Loto-Application\\LotoApp.Models\\LotoApp.Models.csproj": {
+              "projectPath": "D:\\GitHub\\Loto-Application\\LotoApp.Models\\LotoApp.Models.csproj"
             }
           }
         }
@@ -2267,10 +2250,6 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[6.0.11, )"
-          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.11, )"

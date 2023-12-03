@@ -899,8 +899,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "LotoApp.DomainModels": "1.0.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.11",
+          "LotoApp.Models": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.11",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.11"
@@ -912,50 +911,12 @@
           "bin/placeholder/LotoApp.DAL.dll": {}
         }
       },
-      "LotoApp.DomainModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "LotoApp.Models": "1.0.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.11"
-        },
-        "compile": {
-          "bin/placeholder/LotoApp.DomainModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LotoApp.DomainModels.dll": {}
-        }
-      },
-      "LotoApp.InterfaceModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "LotoApp.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/LotoApp.InterfaceModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LotoApp.InterfaceModels.dll": {}
-        }
-      },
-      "LotoApp.Mappers/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "LotoApp.DomainModels": "1.0.0",
-          "LotoApp.InterfaceModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/LotoApp.Mappers.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LotoApp.Mappers.dll": {}
-        }
-      },
       "LotoApp.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.11"
+        },
         "compile": {
           "bin/placeholder/LotoApp.Models.dll": {}
         },
@@ -969,9 +930,6 @@
         "dependencies": {
           "LotoApp.Configurations": "1.0.0",
           "LotoApp.DAL": "1.0.0",
-          "LotoApp.DomainModels": "1.0.0",
-          "LotoApp.InterfaceModels": "1.0.0",
-          "LotoApp.Mappers": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "6.25.0"
         },
         "compile": {
@@ -2484,21 +2442,6 @@
       "type": "project",
       "path": "../LotoApp.DAL/LotoApp.DAL.csproj",
       "msbuildProject": "../LotoApp.DAL/LotoApp.DAL.csproj"
-    },
-    "LotoApp.DomainModels/1.0.0": {
-      "type": "project",
-      "path": "../LotoApp.DomainModels/LotoApp.DomainModels.csproj",
-      "msbuildProject": "../LotoApp.DomainModels/LotoApp.DomainModels.csproj"
-    },
-    "LotoApp.InterfaceModels/1.0.0": {
-      "type": "project",
-      "path": "../LotoApp.InterfaceModels/LotoApp.InterfaceModels.csproj",
-      "msbuildProject": "../LotoApp.InterfaceModels/LotoApp.InterfaceModels.csproj"
-    },
-    "LotoApp.Mappers/1.0.0": {
-      "type": "project",
-      "path": "../LotoApp.Mappers/LotoApp.Mappers.csproj",
-      "msbuildProject": "../LotoApp.Mappers/LotoApp.Mappers.csproj"
     },
     "LotoApp.Models/1.0.0": {
       "type": "project",
