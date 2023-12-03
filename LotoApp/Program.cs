@@ -1,6 +1,6 @@
-using LotoApp.Configurations;
 using LotoApp.DAL;
 using LotoApp.Models.Entities;
+using LotoApp.Services;
 using LotoApp.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;

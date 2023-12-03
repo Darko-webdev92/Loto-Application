@@ -1,5 +1,4 @@
-﻿using LotoApp.Configurations;
-using LotoApp.InterfaceModels;
+﻿using LotoApp.InterfaceModels;
 using LotoApp.Models.Entities;
 using LotoApp.Models.ViewModels;
 using LotoApp.Services.Interfaces;
