@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ea8f6b6rkWq0T71PyxfqYuWEH/Q8foI+KKQTyy7BPG97GMIfCBgRaiXb9kRuksoGY2ovpJkgzw9srEBp7DrWBA==",
+  "dgSpecHash": "/kETpylXsoDFgi7efbZvc7zryfl2UTZzhr75RL+Y2EAxo7FqItp5zHw3IChTM6RAFd+HRvyMIHt4I5HeeRJq3A==",
   "success": true,
   "projectFilePath": "D:\\GitHub\\Loto-Application\\LotoApp\\LotoApp.csproj",
   "expectedPackageFiles": [
@@ -23,7 +23,7 @@
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.1\\microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
-    "C:\\Users\\Darko\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Darko\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.extensions.identity.core\\6.0.11\\microsoft.extensions.identity.core.6.0.11.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.extensions.identity.stores\\6.0.11\\microsoft.extensions.identity.stores.6.0.11.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",

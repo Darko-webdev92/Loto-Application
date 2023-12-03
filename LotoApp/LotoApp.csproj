@@ -18,7 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\LotoApp.Configurations\LotoApp.Configurations.csproj" />
     <ProjectReference Include="..\LotoApp.DAL\LotoApp.DAL.csproj" />
-    <ProjectReference Include="..\LotoApp.Utilities\LotoApp.Utilities.csproj" />
+    <ProjectReference Include="..\LotoApp.Services\LotoApp.Services.csproj" />
   </ItemGroup>
 
 </Project>

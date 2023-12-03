@@ -11,8 +11,7 @@ namespace LotoApp.Controllers
         private readonly AppDbContext _appDbContext;
         public HomeController(AppDbContext appDbContext)
         {
-            _appDbContext = appDbContext;
-
+            _appDbContext = appDbContext ?? throw new ArgumentNullException(nameof(appDbContext));
         }
 
         [HttpGet("Board")]
@@ -21,6 +20,5 @@ namespace LotoApp.Controllers
             var viewData = data.Select(x => WinnerMapper.ToWinner(x));
             return Ok(data);
         }
-
     }
 }

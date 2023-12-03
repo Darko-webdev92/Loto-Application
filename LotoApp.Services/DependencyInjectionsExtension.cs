@@ -12,6 +12,7 @@ namespace LotoApp.Utilities
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IGameService, GameService>();
             services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<IBoardService, BoardService>();
 
             return services;
         }
