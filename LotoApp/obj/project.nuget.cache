@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b0LwyT2lz2SjkXNS8IsSbl0zPRSpeMLhSYR4v6cn4Yu7BDt+7GWkabLRQ+0Tc3C2wPyeGdD0XjIpjOS7srGbhA==",
+  "dgSpecHash": "3Bq4iXV3lgbMWhSOHABgGsm4a6SxJDryhUr8WpiFr9QXyZkdr2ufkmrzqwRDXH+Sf2H5rVaTjDukt39PmEYpeA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp\\LotoApp.csproj",
+  "projectFilePath": "D:\\GitHub\\Loto-Application\\LotoApp\\LotoApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Darko\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.11\\microsoft.aspnetcore.authentication.jwtbearer.6.0.11.nupkg.sha512",

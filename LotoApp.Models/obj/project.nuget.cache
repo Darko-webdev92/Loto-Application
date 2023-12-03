@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zjl5ZrYmkGl2rkVzZLwUMGMbbbuu9BS2rfI4e1fJDLsop/OCSR+pivBkC+HtLenYwxPKse0JbTKxifBlQa4ySw==",
+  "dgSpecHash": "eJuO02xO2OhRyB4xVpHksdpG+qLPIpSKY4guwElv/DHmHTS5GxehzCpGBFwkDHcRcaMgUaxoGkQ0Arwiay5G7Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Models\\LotoApp.Models.csproj",
+  "projectFilePath": "D:\\GitHub\\Loto-Application\\LotoApp.Models\\LotoApp.Models.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
