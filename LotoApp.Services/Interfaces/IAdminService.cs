@@ -9,9 +9,8 @@ namespace LotoApp.Services.Interfaces
         Task StartSession();
         Task<GameManagerResponse> CheckSession();
         Task EndSession();
-        List<WinnerViewModel> StartDraw();
-        int[] RandomArray();
-        DrawnNumbers DrawNumbers();
+        Task<List<WinnerViewModel>> StartDraw();
+        Task<DrawnNumbers> DrawNumbers();
         List<WinnerViewModel> WinningTickets(List<Ticket> ticket, DrawnNumbers drawnNumbers);
     }
 }

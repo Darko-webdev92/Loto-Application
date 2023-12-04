@@ -24,7 +24,6 @@ namespace LotoApp.Services.Implementations
 
         public async Task StartSession()
         {
-            //var draws = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
 
             var draws = await _drawRepository.GetLast();
 
@@ -47,7 +46,6 @@ namespace LotoApp.Services.Implementations
 
         public async Task<GameManagerResponse> CheckSession()
         {
-            //var session = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
             var session = await _drawRepository.GetLast();
 
             if (session != null)
@@ -70,8 +68,6 @@ namespace LotoApp.Services.Implementations
         }
         public async Task EndSession()
         {
-
-            //var session = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
             var session = await _drawRepository.GetLast();
 
             if (session != null)
@@ -97,104 +93,22 @@ namespace LotoApp.Services.Implementations
 
         }
 
-        public List<WinnerViewModel> StartDraw()
+        public async Task<List<WinnerViewModel>>StartDraw()
         {
-            //int[] nums = null;
             List<WinnerViewModel> winners = new List<WinnerViewModel>();
 
-            #region comment
-            //var draws = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
-            //if (draws != null)
-            //{
-            //    if (draws.IsSessionActive == true)
-            //    {
-            //        draws.IsSessionActive = false;
-            //        nums = RandomArray();
-            //        draws.EndSession = DateTime.Now;
-            //        draws.Number_1 = nums[0];
-            //        draws.Number_2 = nums[1];
-            //        draws.Number_3 = nums[2];
-            //        draws.Number_4 = nums[3];
-            //        draws.Number_5 = nums[4];
-            //        draws.Number_6 = nums[5];
-            //        draws.Number_7 = nums[6];
-            //        _appDbContext.Draws.Update(draws);
-            //        _appDbContext.SaveChanges();
-            //    }
-            //}
-            #endregion
-            DrawnNumbers drawnNumbers = DrawNumbers();
+            DrawnNumbers drawnNumbers = await DrawNumbers();
 
             var tickets = _appDbContext.Tickets.Where(x => x.TicketPurchased >= drawnNumbers.StartSession && x.TicketPurchased <= drawnNumbers.EndSession).ToList();
 
             winners = WinningTickets(tickets, drawnNumbers);
 
-            //var draws = _appDbContext.Draws.Count();
 
             StartSession();
-
-            #region comment
-            //if (data != null)
-            //{
-            //    foreach (var item in data)
-            //    {
-            //        int[] userNums = new int[7];
-
-            //        userNums[0] = item.Number_1;
-            //        userNums[1] = item.Number_2;
-            //        userNums[2] = item.Number_3;
-            //        userNums[3] = item.Number_4;
-            //        userNums[4] = item.Number_5;
-            //        userNums[5] = item.Number_6;
-            //        userNums[6] = item.Number_7;
-
-
-            //        int guessedNumbers = 0;
-            //        for (int i = 0; i < drawnNumbers.Nums.Length; i++)
-            //        {
-            //            if (drawnNumbers.Nums[i] == userNums[0] ||
-            //               drawnNumbers.Nums[i] == userNums[1] ||
-            //               drawnNumbers.Nums[i] == userNums[2] ||
-            //               drawnNumbers.Nums[i] == userNums[3] ||
-            //               drawnNumbers.Nums[i] == userNums[4] ||
-            //               drawnNumbers.Nums[i] == userNums[5] ||
-            //               drawnNumbers.Nums[i] == userNums[6]
-            //               )
-            //            {
-            //                guessedNumbers++;
-            //            }
-            //        }
-
-            //        if (guessedNumbers >= 3)
-            //        {
-            //            var user = _appDbContext.Users.Where(x => x.Id == item.UserId).FirstOrDefault();
-            //            if (user != null)
-            //            {
-            //                var winner = new Winner
-            //                {
-            //                    FirstName = user.FirstName,
-            //                    LastName = user.LastName,
-            //                    Prize = guessedNumbers,
-            //                    Number_1 = drawnNumbers.Nums[0],
-            //                    Number_2 = drawnNumbers.Nums[1],
-            //                    Number_3 = drawnNumbers.Nums[2],
-            //                    Number_4 = drawnNumbers.Nums[3],
-            //                    Number_5 = drawnNumbers.Nums[4],
-            //                    Number_6 = drawnNumbers.Nums[5],
-            //                    Number_7 = drawnNumbers.Nums[6],
-            //                };
-            //                winners.Add(winner);
-            //            }
-            //        }
-            //    }
-            //}
-
-            #endregion
-
             return winners;
         }
 
-        public int[] RandomArray()
+        private int[] RandomArray()
         {
             int[] nums = new int[7];
             var rand = new Random();
@@ -205,11 +119,11 @@ namespace LotoApp.Services.Implementations
                 while (exist)
                 {
                     exist = false;//we change it because until we didn't see the same value on array, we accept as non-exist.
-                    int x = rand.Next(1, 37) + 1;
+                    int number = rand.Next(1, 37) + 1;
 
                     for (int k = 0; k < i; k++)
-                    {//we check everynumber until "i" we come.
-                        if (x == nums[k])
+                    {//we check every number until "i" we come.
+                        if (number == nums[k])
                         {//if exist we said same value exist
                             exist = true;
                             break;
@@ -217,18 +131,18 @@ namespace LotoApp.Services.Implementations
                     }
                     if (!exist)
                     {//if same value not exist we save it in our array
-                        nums[i] = x;
+                        nums[i] = number;
                     }
                 }
             }
-
             return nums;
         }
-        public DrawnNumbers DrawNumbers()
+        public async Task<DrawnNumbers> DrawNumbers()
         {
             int[] nums = null;
 
-            var draw = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
+            var draw = await _drawRepository.GetLast();
+
             if (draw != null)
             {
                 if (draw.IsSessionActive == true)
