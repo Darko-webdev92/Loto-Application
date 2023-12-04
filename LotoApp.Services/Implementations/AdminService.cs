@@ -1,4 +1,5 @@
 ﻿using LotoApp.DAL;
+using LotoApp.DAL.Interfaces;
 using LotoApp.Models;
 using LotoApp.Models.Dto;
 using LotoApp.Models.Entities;
@@ -11,15 +12,21 @@ namespace LotoApp.Services.Implementations
     public class AdminService : IAdminService
     {
         private readonly AppDbContext _appDbContext;
+        private readonly IAdminRepository _adminRepository;
+        private readonly IDrawRepository _drawRepository;
 
-        public AdminService(AppDbContext appDbContext)
+        public AdminService(AppDbContext appDbContext, IAdminRepository adminRepository, IDrawRepository drawRepository)
         {
             _appDbContext = appDbContext;
+            _adminRepository = adminRepository;
+            _drawRepository = drawRepository;
         }
 
-        public void StartSession()
+        public async Task StartSession()
         {
-            var draws = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
+            //var draws = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
+
+            var draws = await _drawRepository.GetLast();
 
             if (draws != null)
             {
@@ -34,13 +41,15 @@ namespace LotoApp.Services.Implementations
                 StartSession = DateTime.Now,
                 IsSessionActive = true,
             };
-            _appDbContext.Draws.Add(model);
-            _appDbContext.SaveChanges();
+
+            _adminRepository.Add(model);
         }
 
-        public GameManagerResponse CheckSession()
+        public async Task<GameManagerResponse> CheckSession()
         {
-            var session = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
+            //var session = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
+            var session = await _drawRepository.GetLast();
+
             if (session != null)
             {
                 if (session.IsSessionActive == true)
@@ -59,10 +68,12 @@ namespace LotoApp.Services.Implementations
                 IsActive = false,
             };
         }
-        public void EndSession()
+        public async Task EndSession()
         {
 
-            var session = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
+            //var session = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
+            var session = await _drawRepository.GetLast();
+
             if (session != null)
             {
                 if (session.IsSessionActive)

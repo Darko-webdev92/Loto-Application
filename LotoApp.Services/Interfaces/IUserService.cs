@@ -1,5 +1,4 @@
-﻿using LotoApp.InterfaceModels;
-using LotoApp.Models.ViewModels;
+﻿using LotoApp.Models.ViewModels;
 
 namespace LotoApp.Services.Interfaces
 {

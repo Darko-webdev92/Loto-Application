@@ -1,4 +1,6 @@
-﻿using LotoApp.Services.Implementations;
+﻿using LotoApp.DAL.Implementations;
+using LotoApp.DAL.Interfaces;
+using LotoApp.Services.Implementations;
 using LotoApp.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,6 +16,8 @@ namespace LotoApp.Utilities
             services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<IBoardService, BoardService>();
 
+            // Repositories
+            services.AddScoped<IAdminRepository, AdminRepository>();
             return services;
         }
 

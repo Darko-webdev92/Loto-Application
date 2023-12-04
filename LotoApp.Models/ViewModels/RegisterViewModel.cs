@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LotoApp.InterfaceModels
+namespace LotoApp.Models.ViewModels
 {
     public class RegisterViewModel
     {

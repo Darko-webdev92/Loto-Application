@@ -30,8 +30,4 @@
     <ProjectReference Include="..\LotoApp.Models\LotoApp.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Implementations\" />
-  </ItemGroup>
-
 </Project>
