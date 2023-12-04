@@ -1,11 +1,6 @@
-﻿using LotoApp.DomainModels;
+﻿using LotoApp.Models.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LotoApp.DAL
 {
@@ -19,15 +14,12 @@ namespace LotoApp.DAL
                 NormalizedName = "Admin".ToUpper()
             };
 
-            const string ADMIN_ID = "b30am3c1-hg09-bbf0-bd17-007daka4e575";
-            var hasher = new PasswordHasher<ApplicationUserDto>();
-            var user = new ApplicationUserDto()
+            var hasher = new PasswordHasher<ApplicationUser>();
+            var user = new ApplicationUser()
             {
-                Id = ADMIN_ID,
                 FirstName = "Admin",
                 LastName = "Angelovski",
                 Email = "admin@example.com",
-                //RoleId = "3",
                 UserName = "admin@example.com",
                 NormalizedUserName = "admin@example.com",
                 NormalizedEmail = "admin@example.com",
@@ -38,16 +30,13 @@ namespace LotoApp.DAL
 
             IdentityUserRole<string> userRole = new IdentityUserRole<string>()
             {
-               UserId = ADMIN_ID,
+               UserId = user.Id,
                RoleId = role.Id,
             };
 
             builder.Entity<IdentityRole>().HasData(role);
-            builder.Entity<ApplicationUserDto>().HasData(user);
+            builder.Entity<ApplicationUser>().HasData(user);
             builder.Entity<IdentityUserRole<string>>().HasData(userRole);
-
-
-
         }
     }
 }

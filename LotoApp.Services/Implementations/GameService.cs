@@ -1,13 +1,8 @@
 ﻿using LotoApp.DAL;
-using LotoApp.DomainModels;
-using LotoApp.InterfaceModels;
+using LotoApp.Models.Entities;
+using LotoApp.Models.ViewModels;
 using LotoApp.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LotoApp.Services.Implementations
 {
@@ -22,7 +17,7 @@ namespace LotoApp.Services.Implementations
 
         //public void EnterTicket(Ticket model, string userId)
 
-        public GameManagerResponse EnterTicket(Ticket model, string userId)
+        public GameManagerResponse EnterTicket(TicketViewModel model, string userId)
         {
             var session = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
             if(session != null)
@@ -46,7 +41,7 @@ namespace LotoApp.Services.Implementations
                     var res = nums.Distinct().Count() == nums.Length;
                     if (res)
                     {
-                        TicketDto ticket = new TicketDto
+                        Ticket ticket = new Ticket
                         {
                             Number_1 = nums[0],
                             Number_2 = nums[1],

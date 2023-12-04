@@ -22,7 +22,7 @@ namespace LotoApp.DAL.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("LotoApp.DomainModels.Draw", b =>
+            modelBuilder.Entity("LotoApp.Models.Entities.Draw", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -65,7 +65,7 @@ namespace LotoApp.DAL.Migrations
                     b.ToTable("Draws");
                 });
 
-            modelBuilder.Entity("LotoApp.DomainModels.TicketDto", b =>
+            modelBuilder.Entity("LotoApp.Models.Entities.Ticket", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -111,7 +111,7 @@ namespace LotoApp.DAL.Migrations
                     b.ToTable("Tickets");
                 });
 
-            modelBuilder.Entity("LotoApp.DomainModels.WinnerDto", b =>
+            modelBuilder.Entity("LotoApp.Models.Entities.Winner", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -188,8 +188,8 @@ namespace LotoApp.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0de3d798-1737-44a7-b348-d76a1b4c3406",
-                            ConcurrencyStamp = "21a05012-add2-47b1-a566-eccd3af5423c",
+                            Id = "24b0bc97-e365-4791-842c-c688bfbaae4e",
+                            ConcurrencyStamp = "c5a153b2-165a-4469-b74c-4b7fabcf26a4",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -355,8 +355,8 @@ namespace LotoApp.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "b30am3c1-hg09-bbf0-bd17-007daka4e575",
-                            RoleId = "0de3d798-1737-44a7-b348-d76a1b4c3406"
+                            UserId = "0efd1cde-a620-443a-99d1-6f2233320886",
+                            RoleId = "24b0bc97-e365-4791-842c-c688bfbaae4e"
                         });
                 });
 
@@ -379,7 +379,7 @@ namespace LotoApp.DAL.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("LotoApp.DomainModels.ApplicationUserDto", b =>
+            modelBuilder.Entity("LotoApp.Models.Entities.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -391,20 +391,20 @@ namespace LotoApp.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasDiscriminator().HasValue("ApplicationUserDto");
+                    b.HasDiscriminator().HasValue("ApplicationUser");
 
                     b.HasData(
                         new
                         {
-                            Id = "b30am3c1-hg09-bbf0-bd17-007daka4e575",
+                            Id = "0efd1cde-a620-443a-99d1-6f2233320886",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "64880ce9-b01c-4f11-9b21-a71d50eeeb11",
+                            ConcurrencyStamp = "0b76eaaf-517e-4492-94c5-d37649d46506",
                             Email = "admin@example.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@example.com",
                             NormalizedUserName = "admin@example.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEI5n0Eqq9EGhD6MCJ9v0DYvM6I3kxKD90LUGNyLlRRuG10RgFiAHxpPFtuyaSxHGow==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMJeuUB49ajkJhD66tg4EkfPowcOZjFteG05aLOZQ8m+RPYt8mYSg8w/eo0WPu9Yaw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -414,9 +414,9 @@ namespace LotoApp.DAL.Migrations
                         });
                 });
 
-            modelBuilder.Entity("LotoApp.DomainModels.TicketDto", b =>
+            modelBuilder.Entity("LotoApp.Models.Entities.Ticket", b =>
                 {
-                    b.HasOne("LotoApp.DomainModels.ApplicationUserDto", "User")
+                    b.HasOne("LotoApp.Models.Entities.ApplicationUser", "User")
                         .WithMany("Ticket")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -476,7 +476,7 @@ namespace LotoApp.DAL.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("LotoApp.DomainModels.ApplicationUserDto", b =>
+            modelBuilder.Entity("LotoApp.Models.Entities.ApplicationUser", b =>
                 {
                     b.Navigation("Ticket");
                 });

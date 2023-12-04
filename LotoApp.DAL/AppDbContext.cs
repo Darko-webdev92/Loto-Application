@@ -1,11 +1,6 @@
-﻿using LotoApp.DomainModels;
+﻿using LotoApp.Models.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LotoApp.DAL
 {
@@ -15,13 +10,10 @@ namespace LotoApp.DAL
         {
 
         }
-        public DbSet<ApplicationUserDto> Users { get; set; }
-
-        public DbSet<TicketDto> Tickets { get; set; }
+        public DbSet<ApplicationUser> Users { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Draw> Draws { get; set; }
-        public DbSet<WinnerDto> Winners { get; set; }
-
-
+        public DbSet<Winner> Winners { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

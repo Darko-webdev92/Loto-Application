@@ -1,4 +1,5 @@
 ﻿using LotoApp.DAL;
+using LotoApp.Models.Dto;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LotoApp.Controllers
@@ -10,16 +11,14 @@ namespace LotoApp.Controllers
         private readonly AppDbContext _appDbContext;
         public HomeController(AppDbContext appDbContext)
         {
-            _appDbContext = appDbContext;
-
+            _appDbContext = appDbContext ?? throw new ArgumentNullException(nameof(appDbContext));
         }
 
         [HttpGet("Board")]
         public IActionResult WinnersBoard()
         {            var data = _appDbContext.Winners;
-            var viewData = data.Select(x => Mappers.WinnerMapper.ToWinner(x));
+            var viewData = data.Select(x => WinnerMapper.ToWinner(x));
             return Ok(data);
         }
-
     }
 }

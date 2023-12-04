@@ -1,6 +1,5 @@
 ﻿using LotoApp.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LotoApp.Controllers
@@ -23,17 +22,10 @@ namespace LotoApp.Controllers
             return Ok("Session is activated");
         }
 
-        //[HttpGet("CheckSession")]
-        //public IActionResult CheckSession()
-        //{
-        //    var res = _adminService.CheckSession();
-        //    return Ok(res);
-        //}
-
         [HttpPut("StartDraw")]
-        public IActionResult StartDraw()
+        public async Task<IActionResult> StartDraw()
         {
-           var winners = _adminService.StartDraw();
+           var winners = await _adminService.StartDraw();
             if(winners.Count > 0)
             {
                 return Ok(winners);

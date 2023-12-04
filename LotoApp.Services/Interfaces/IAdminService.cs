@@ -1,23 +1,16 @@
-﻿using LotoApp.DomainModels;
-using LotoApp.InterfaceModels;
-using LotoApp.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LotoApp.Models;
+using LotoApp.Models.Entities;
+using LotoApp.Models.ViewModels;
 
 namespace LotoApp.Services.Interfaces
 {
     public interface IAdminService
     {
-        void StartSession();
-        GameManagerResponse CheckSession();
-        void EndSession();
-        List<Winner> StartDraw();
-        int[] RandomArray();
-        DrawnNumbers DrawNumbers();
-        List<Winner> WinningTickets(List<TicketDto> ticket, DrawnNumbers drawnNumbers);
-
+        Task StartSession();
+        Task<GameManagerResponse> CheckSession();
+        Task EndSession();
+        Task<List<WinnerViewModel>> StartDraw();
+        Task<DrawnNumbers> DrawNumbers();
+        List<WinnerViewModel> WinningTickets(List<Ticket> ticket, DrawnNumbers drawnNumbers);
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2tgRA3E0pdJDIBEP+/0ks5kuxkyjZOO4fqaUVwmetlZwVZ6ymy9XAXVvZGnfuOvY823p4Foz4PMQdN3bY95Gyw==",
+  "dgSpecHash": "LZCSJmTeVVdBPXlaOv/3RNK8d606gqDs63mTfkLyHrlY+RIdZrYjGiYs/xnNbFOaxHNH6SlCDjw13dx4L1M0IQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.DAL\\LotoApp.DAL.csproj",
+  "projectFilePath": "D:\\GitHub\\Loto-Application\\LotoApp.DAL\\LotoApp.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Darko\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.11\\microsoft.aspnetcore.cryptography.internal.6.0.11.nupkg.sha512",

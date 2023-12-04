@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Mappers\\LotoApp.Mappers.csproj": {}
+    "D:\\GitHub\\Loto-Application\\LotoApp.Mappers\\LotoApp.Mappers.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.DomainModels\\LotoApp.DomainModels.csproj": {
+    "D:\\GitHub\\Loto-Application\\LotoApp.DomainModels\\LotoApp.DomainModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.DomainModels\\LotoApp.DomainModels.csproj",
+        "projectUniqueName": "D:\\GitHub\\Loto-Application\\LotoApp.DomainModels\\LotoApp.DomainModels.csproj",
         "projectName": "LotoApp.DomainModels",
-        "projectPath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.DomainModels\\LotoApp.DomainModels.csproj",
+        "projectPath": "D:\\GitHub\\Loto-Application\\LotoApp.DomainModels\\LotoApp.DomainModels.csproj",
         "packagesPath": "C:\\Users\\Darko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.DomainModels\\obj\\",
+        "outputPath": "D:\\GitHub\\Loto-Application\\LotoApp.DomainModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Darko\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,14 +22,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/xbim-develop/api/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Models\\LotoApp.Models.csproj": {
-                "projectPath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Models\\LotoApp.Models.csproj"
+              "D:\\GitHub\\Loto-Application\\LotoApp.Models\\LotoApp.Models.csproj": {
+                "projectPath": "D:\\GitHub\\Loto-Application\\LotoApp.Models\\LotoApp.Models.csproj"
               }
             }
           }
@@ -55,7 +56,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -64,18 +66,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.InterfaceModels\\LotoApp.InterfaceModels.csproj": {
+    "D:\\GitHub\\Loto-Application\\LotoApp.InterfaceModels\\LotoApp.InterfaceModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.InterfaceModels\\LotoApp.InterfaceModels.csproj",
+        "projectUniqueName": "D:\\GitHub\\Loto-Application\\LotoApp.InterfaceModels\\LotoApp.InterfaceModels.csproj",
         "projectName": "LotoApp.InterfaceModels",
-        "projectPath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.InterfaceModels\\LotoApp.InterfaceModels.csproj",
+        "projectPath": "D:\\GitHub\\Loto-Application\\LotoApp.InterfaceModels\\LotoApp.InterfaceModels.csproj",
         "packagesPath": "C:\\Users\\Darko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.InterfaceModels\\obj\\",
+        "outputPath": "D:\\GitHub\\Loto-Application\\LotoApp.InterfaceModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Darko\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -86,14 +88,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/xbim-develop/api/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Models\\LotoApp.Models.csproj": {
-                "projectPath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Models\\LotoApp.Models.csproj"
+              "D:\\GitHub\\Loto-Application\\LotoApp.Models\\LotoApp.Models.csproj": {
+                "projectPath": "D:\\GitHub\\Loto-Application\\LotoApp.Models\\LotoApp.Models.csproj"
               }
             }
           }
@@ -113,7 +116,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -122,18 +126,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Mappers\\LotoApp.Mappers.csproj": {
+    "D:\\GitHub\\Loto-Application\\LotoApp.Mappers\\LotoApp.Mappers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Mappers\\LotoApp.Mappers.csproj",
+        "projectUniqueName": "D:\\GitHub\\Loto-Application\\LotoApp.Mappers\\LotoApp.Mappers.csproj",
         "projectName": "LotoApp.Mappers",
-        "projectPath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Mappers\\LotoApp.Mappers.csproj",
+        "projectPath": "D:\\GitHub\\Loto-Application\\LotoApp.Mappers\\LotoApp.Mappers.csproj",
         "packagesPath": "C:\\Users\\Darko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Mappers\\obj\\",
+        "outputPath": "D:\\GitHub\\Loto-Application\\LotoApp.Mappers\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Darko\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -144,17 +148,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/xbim-develop/api/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.DomainModels\\LotoApp.DomainModels.csproj": {
-                "projectPath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.DomainModels\\LotoApp.DomainModels.csproj"
+              "D:\\GitHub\\Loto-Application\\LotoApp.DomainModels\\LotoApp.DomainModels.csproj": {
+                "projectPath": "D:\\GitHub\\Loto-Application\\LotoApp.DomainModels\\LotoApp.DomainModels.csproj"
               },
-              "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.InterfaceModels\\LotoApp.InterfaceModels.csproj": {
-                "projectPath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.InterfaceModels\\LotoApp.InterfaceModels.csproj"
+              "D:\\GitHub\\Loto-Application\\LotoApp.InterfaceModels\\LotoApp.InterfaceModels.csproj": {
+                "projectPath": "D:\\GitHub\\Loto-Application\\LotoApp.InterfaceModels\\LotoApp.InterfaceModels.csproj"
               }
             }
           }
@@ -174,7 +179,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -183,18 +189,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Models\\LotoApp.Models.csproj": {
+    "D:\\GitHub\\Loto-Application\\LotoApp.Models\\LotoApp.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Models\\LotoApp.Models.csproj",
+        "projectUniqueName": "D:\\GitHub\\Loto-Application\\LotoApp.Models\\LotoApp.Models.csproj",
         "projectName": "LotoApp.Models",
-        "projectPath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Models\\LotoApp.Models.csproj",
+        "projectPath": "D:\\GitHub\\Loto-Application\\LotoApp.Models\\LotoApp.Models.csproj",
         "packagesPath": "C:\\Users\\Darko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Models\\obj\\",
+        "outputPath": "D:\\GitHub\\Loto-Application\\LotoApp.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Darko\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -205,7 +211,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/xbim-develop/api/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -228,7 +235,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -237,7 +245,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

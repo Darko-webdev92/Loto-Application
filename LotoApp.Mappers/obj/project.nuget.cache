@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZEaKnEfz2LIeaR2fuE6xYrF+miqfKvQkUrskpRMxkYFej7uJ85RpsdXilrcftfQczbhdstvB8qRXY99i5DxGrQ==",
+  "dgSpecHash": "Ewu6+n3J3IKpnTZxvbr/IcHHwqHBXYTJCetZZiOHIcrelaijoQ2WYGq6gmlmzmNtZGI+KyRYS4bz2AkRXzeKxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Darko\\Desktop\\SEDC ACADEMY\\9. Web Api\\LotoApp\\LotoApp.Mappers\\LotoApp.Mappers.csproj",
+  "projectFilePath": "D:\\GitHub\\Loto-Application\\LotoApp.Mappers\\LotoApp.Mappers.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.11\\microsoft.aspnetcore.cryptography.internal.6.0.11.nupkg.sha512",
     "C:\\Users\\Darko\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.11\\microsoft.aspnetcore.cryptography.keyderivation.6.0.11.nupkg.sha512",

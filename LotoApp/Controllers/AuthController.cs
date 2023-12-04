@@ -1,6 +1,5 @@
-﻿using LotoApp.InterfaceModels;
+﻿using LotoApp.Models.ViewModels;
 using LotoApp.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LotoApp.Controllers
@@ -16,7 +15,7 @@ namespace LotoApp.Controllers
         }
 
         [HttpPost("Register")]
-        public async Task<IActionResult> Register([FromBody] Register model)
+        public async Task<IActionResult> Register([FromBody] RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -32,7 +31,7 @@ namespace LotoApp.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> Login([FromBody] Login model)
+        public async Task<IActionResult> Login([FromBody] LoginViewModel model)
         {
             if (ModelState.IsValid)
             {

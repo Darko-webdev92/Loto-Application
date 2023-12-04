@@ -1,5 +1,5 @@
-﻿using LotoApp.DomainModels;
-using LotoApp.InterfaceModels;
+﻿using LotoApp.Models.Entities;
+using LotoApp.Models.ViewModels;
 using LotoApp.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -14,13 +14,13 @@ namespace LotoApp.Controllers
     public class GameController : ControllerBase
     {
         private readonly IGameService _gameService;
-        public GameController(UserManager<ApplicationUserDto> userManager, IGameService gameService)
+        public GameController(UserManager<ApplicationUser> userManager, IGameService gameService)
         {
             _gameService = gameService;
         }
 
         [HttpPost("EnterTicket")]
-        public IActionResult EnterTicket([FromBody] Ticket model)
+        public IActionResult EnterTicket([FromBody] TicketViewModel model)
         {
             if (User.Identity.IsAuthenticated)
             {
