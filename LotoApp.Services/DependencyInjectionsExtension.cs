@@ -19,6 +19,8 @@ namespace LotoApp.Utilities
             // Repositories
             services.AddScoped<IAdminRepository, AdminRepository>();
             services.AddScoped<IDrawRepository, DrawRepository>();
+            services.AddScoped<IWinnerRepository, WinnerRepository>();
+            services.AddScoped<ITicketRepository, TicketRepository>();
 
             return services;
         }

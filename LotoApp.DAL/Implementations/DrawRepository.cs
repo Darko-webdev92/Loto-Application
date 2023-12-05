@@ -1,11 +1,6 @@
 ﻿using LotoApp.DAL.Interfaces;
 using LotoApp.Models.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LotoApp.DAL.Implementations
 {
@@ -16,17 +11,21 @@ namespace LotoApp.DAL.Implementations
         public DrawRepository(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
-
         }
 
         public async Task<IEnumerable<Draw>> GetAll()
         {
-            return _appDbContext.Draws.AsNoTracking();
+            return _appDbContext.Draws;
         }
 
         public async Task<Draw> GetLast()
         {
-            return _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
+            return await _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefaultAsync();
+        }
+        public async Task Update(Draw entity)
+        {
+            _appDbContext.Draws.Update(entity);
+          await _appDbContext.SaveChangesAsync();
         }
     }
 }

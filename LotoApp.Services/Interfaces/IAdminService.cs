@@ -11,6 +11,6 @@ namespace LotoApp.Services.Interfaces
         Task EndSession();
         Task<List<WinnerViewModel>> StartDraw();
         Task<DrawnNumbers> DrawNumbers();
-        List<WinnerViewModel> WinningTickets(List<Ticket> ticket, DrawnNumbers drawnNumbers);
+        Task<List<WinnerViewModel>> WinningTickets(List<Ticket> ticket, DrawnNumbers drawnNumbers);
     }
 }

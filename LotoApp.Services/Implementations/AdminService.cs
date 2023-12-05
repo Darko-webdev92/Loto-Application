@@ -6,20 +6,25 @@ using LotoApp.Models.Entities;
 using LotoApp.Models.Enums;
 using LotoApp.Models.ViewModels;
 using LotoApp.Services.Interfaces;
+using Microsoft.AspNetCore.Identity;
 
 namespace LotoApp.Services.Implementations
 {
     public class AdminService : IAdminService
     {
-        private readonly AppDbContext _appDbContext;
         private readonly IAdminRepository _adminRepository;
         private readonly IDrawRepository _drawRepository;
+        private readonly IWinnerRepository _winnerRepository;
+        private readonly ITicketRepository _ticketRepository;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public AdminService(AppDbContext appDbContext, IAdminRepository adminRepository, IDrawRepository drawRepository)
+        public AdminService(IAdminRepository adminRepository, IDrawRepository drawRepository, IWinnerRepository winnerRepository, ITicketRepository ticketRepository, UserManager<ApplicationUser> userManager)
         {
-            _appDbContext = appDbContext;
             _adminRepository = adminRepository;
             _drawRepository = drawRepository;
+            _winnerRepository = winnerRepository;
+            _ticketRepository = ticketRepository;
+            _userManager = userManager;
         }
 
         public async Task StartSession()
@@ -41,7 +46,7 @@ namespace LotoApp.Services.Implementations
                 IsSessionActive = true,
             };
 
-            _adminRepository.Add(model);
+            await _adminRepository.Add(model);
         }
 
         public async Task<GameManagerResponse> CheckSession()
@@ -77,8 +82,7 @@ namespace LotoApp.Services.Implementations
                     session.IsSessionActive = false;
                     session.EndSession = DateTime.Now;
 
-                    _appDbContext.Draws.Update(session);
-                    _appDbContext.SaveChanges();
+                    await _drawRepository.Update(session);
                 }
                 else
                 {
@@ -90,21 +94,19 @@ namespace LotoApp.Services.Implementations
                     throw new Exception(message.Message);
                 }
             }
-
         }
 
-        public async Task<List<WinnerViewModel>>StartDraw()
+        public async Task<List<WinnerViewModel>> StartDraw()
         {
             List<WinnerViewModel> winners = new List<WinnerViewModel>();
 
             DrawnNumbers drawnNumbers = await DrawNumbers();
 
-            var tickets = _appDbContext.Tickets.Where(x => x.TicketPurchased >= drawnNumbers.StartSession && x.TicketPurchased <= drawnNumbers.EndSession).ToList();
+            var alltickets = await _ticketRepository.GetAll();
+            var tickets = alltickets.Where(x => x.TicketPurchased >= drawnNumbers.StartSession && x.TicketPurchased <= drawnNumbers.EndSession).ToList();
+            winners = await WinningTickets(tickets, drawnNumbers);
 
-            winners = WinningTickets(tickets, drawnNumbers);
-
-
-            StartSession();
+            await StartSession();
             return winners;
         }
 
@@ -158,8 +160,7 @@ namespace LotoApp.Services.Implementations
                     draw.Number_6 = nums[5];
                     draw.Number_7 = nums[6];
 
-                    _appDbContext.Draws.Update(draw);
-                    _appDbContext.SaveChanges();
+                    await _drawRepository.Update(draw);
                 }
                 else
                 {
@@ -171,14 +172,15 @@ namespace LotoApp.Services.Implementations
             {
                 EndSession = draw.EndSession,
                 StartSession = draw.StartSession,
-                Nums = nums, 
+                Nums = nums,
             };
         }
 
-        public List<WinnerViewModel> WinningTickets(List<Ticket> ticket, DrawnNumbers drawnNumbers)
+        public async Task<List<WinnerViewModel>> WinningTickets(List<Ticket> ticket, DrawnNumbers drawnNumbers)
         {
-            List<WinnerViewModel> winners = new List<WinnerViewModel>();
-            List<Winner> winnerDtos = new List<Winner>();
+            List<WinnerViewModel> winnersViewModel = new List<WinnerViewModel>();
+            List<Winner> winners = new List<Winner>();
+            var lastSession = await _drawRepository.GetLast();
 
             if (ticket != null)
             {
@@ -213,7 +215,7 @@ namespace LotoApp.Services.Implementations
 
                     if (guessedNumbers >= 3)
                     {
-                        var user = _appDbContext.Users.Where(x => x.Id == item.UserId).FirstOrDefault();
+                        var user = await _userManager.FindByIdAsync(item.UserId);
                         if (user != null)
                         {
                             var winner = new WinnerViewModel
@@ -230,25 +232,19 @@ namespace LotoApp.Services.Implementations
                                 Number_6 = userNums[5],
                                 Number_7 = userNums[6],
 
-
-                                SessionId = _appDbContext.Draws.Count()
-                           };
-                            winners.Add(winner);
+                                SessionId = lastSession.Id
+                            };
+                            winnersViewModel.Add(winner);
                         }
                     }
                 }
             }
 
-            winnerDtos = winners.Select(x => WinnerMapper.ToWinnerDto(x)).ToList();
+            winners = winnersViewModel.Select(x => WinnerMapper.ToWinnerDto(x)).ToList();
 
-            //foreach (var item in winners)
-            //{
-            //    winnerDtos.Add(WinnerMapper.ToWinnerDto(item));
-            //}
-            _appDbContext.Winners.AddRange(winnerDtos);
-            _appDbContext.SaveChanges();
+            await _winnerRepository.AddWinners(winners);
 
-            return winners;
+            return winnersViewModel;
         }
 
 
