@@ -1,5 +1,4 @@
-﻿using LotoApp.DAL;
-using LotoApp.DAL.Interfaces;
+﻿using LotoApp.DAL.Interfaces;
 using LotoApp.Models;
 using LotoApp.Models.Dto;
 using LotoApp.Models.Entities;
@@ -20,11 +19,11 @@ namespace LotoApp.Services.Implementations
 
         public AdminService(IAdminRepository adminRepository, IDrawRepository drawRepository, IWinnerRepository winnerRepository, ITicketRepository ticketRepository, UserManager<ApplicationUser> userManager)
         {
-            _adminRepository = adminRepository;
-            _drawRepository = drawRepository;
-            _winnerRepository = winnerRepository;
-            _ticketRepository = ticketRepository;
-            _userManager = userManager;
+            _adminRepository = adminRepository ?? throw new ArgumentNullException(nameof(adminRepository));
+            _drawRepository = drawRepository ?? throw new ArgumentNullException(nameof(drawRepository));
+            _winnerRepository = winnerRepository ?? throw new ArgumentNullException(nameof(winnerRepository));
+            _ticketRepository = ticketRepository ?? throw new ArgumentNullException(nameof(ticketRepository));
+            _userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
         }
 
         public async Task StartSession()

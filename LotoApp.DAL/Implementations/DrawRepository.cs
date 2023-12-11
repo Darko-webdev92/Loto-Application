@@ -22,6 +22,7 @@ namespace LotoApp.DAL.Implementations
         {
             return await _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefaultAsync();
         }
+
         public async Task Update(Draw entity)
         {
             _appDbContext.Draws.Update(entity);

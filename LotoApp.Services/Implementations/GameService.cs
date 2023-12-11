@@ -1,4 +1,4 @@
-﻿using LotoApp.DAL;
+﻿using LotoApp.DAL.Interfaces;
 using LotoApp.Models.Entities;
 using LotoApp.Models.ViewModels;
 using LotoApp.Services.Interfaces;
@@ -8,19 +8,21 @@ namespace LotoApp.Services.Implementations
 {
     public class GameService : IGameService
     {
-        private readonly AppDbContext _appDbContext;
+        private readonly IDrawRepository _drawRepository;
+        private readonly ITicketRepository _ticketRepository;
 
-        public GameService(AppDbContext appDbContext)
+        public GameService(IDrawRepository drawRepository, ITicketRepository ticketRepository)
         {
-            _appDbContext = appDbContext;
+            _drawRepository = drawRepository;
+            _ticketRepository = ticketRepository;
         }
 
-        //public void EnterTicket(Ticket model, string userId)
-
-        public GameManagerResponse EnterTicket(TicketViewModel model, string userId)
+        public async Task<GameManagerResponse> EnterTicket(TicketViewModel model, string userId)
         {
-            var session = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
-            if(session != null)
+            //var session = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
+            var session = await _drawRepository.GetLast();
+
+            if (session != null)
             {
                 if (session.IsSessionActive)
                 {
@@ -34,8 +36,6 @@ namespace LotoApp.Services.Implementations
                             nums[counter] = (int)prop.GetValue(model, null);
                             counter++;
                         }
-                        Console.WriteLine($"{prop.Name}: {prop.GetValue(model, null)}");
-                        Console.WriteLine(prop.GetValue(model, null).GetType());
                     }
 
                     var res = nums.Distinct().Count() == nums.Length;
@@ -54,9 +54,8 @@ namespace LotoApp.Services.Implementations
                             UserId = userId,
                             Session = session.Id
                         };
+                        await _ticketRepository.Add(ticket);
 
-                        _appDbContext.Tickets.Add(ticket);
-                        _appDbContext.SaveChanges();
                         return new GameManagerResponse
                         {
                             Message = "Sucessfully added ticked",
@@ -69,10 +68,10 @@ namespace LotoApp.Services.Implementations
                 }
 
             }
-                return new GameManagerResponse
-                {
-                    Message = "There is no active session"
-                };
+            return new GameManagerResponse
+            {
+                Message = "There is no active session"
+            };
         }
     }
 }
