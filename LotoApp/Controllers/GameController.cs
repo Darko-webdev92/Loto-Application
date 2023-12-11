@@ -14,9 +14,9 @@ namespace LotoApp.Controllers
     public class GameController : ControllerBase
     {
         private readonly IGameService _gameService;
-        public GameController(UserManager<ApplicationUser> userManager, IGameService gameService)
+        public GameController(IGameService gameService)
         {
-            _gameService = gameService;
+            _gameService = gameService ?? throw new ArgumentNullException(nameof(gameService));
         }
 
         [HttpPost("EnterTicket")]

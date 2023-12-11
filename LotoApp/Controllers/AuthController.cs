@@ -1,4 +1,5 @@
 ﻿using LotoApp.Models.ViewModels;
+using LotoApp.Services.Implementations;
 using LotoApp.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,7 +12,7 @@ namespace LotoApp.Controllers
         private readonly IUserService _userService;
         public AuthController(IUserService userService)
         {
-            _userService = userService;
+            _userService = userService ?? throw new ArgumentNullException(nameof(userService)); 
         }
 
         [HttpPost("Register")]
