@@ -11,7 +11,7 @@ namespace LotoApp.DAL.Implementations
 
         public TicketRepository(AppDbContext appDbContext)
         {
-            _appDbContext = appDbContext;
+            _appDbContext = appDbContext ?? throw new ArgumentNullException(nameof(appDbContext));
         }
 
         public async Task Add(Ticket entity)

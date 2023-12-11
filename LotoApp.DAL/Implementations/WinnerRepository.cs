@@ -9,7 +9,7 @@ namespace LotoApp.DAL.Implementations
 
         public WinnerRepository(AppDbContext appDbContext)
         {
-            _appDbContext = appDbContext;
+            _appDbContext = appDbContext ?? throw new ArgumentNullException(nameof(appDbContext));
         }
 
         public async Task AddWinners(IEnumerable<Winner> winners)
