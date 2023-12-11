@@ -1,4 +1,5 @@
-﻿using LotoApp.DAL.Interfaces;
+﻿using LotoApp.DAL.Implementations;
+using LotoApp.DAL.Interfaces;
 using LotoApp.Models.Entities;
 using LotoApp.Models.ViewModels;
 using LotoApp.Services.Interfaces;
@@ -13,8 +14,8 @@ namespace LotoApp.Services.Implementations
 
         public GameService(IDrawRepository drawRepository, ITicketRepository ticketRepository)
         {
-            _drawRepository = drawRepository;
-            _ticketRepository = ticketRepository;
+            _drawRepository = drawRepository ?? throw new ArgumentNullException(nameof(drawRepository)); 
+            _ticketRepository = ticketRepository ?? throw new ArgumentNullException(nameof(ticketRepository));
         }
 
         public async Task<GameManagerResponse> EnterTicket(TicketViewModel model, string userId)

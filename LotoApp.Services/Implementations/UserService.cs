@@ -2,7 +2,6 @@
 using LotoApp.Models.ViewModels;
 using LotoApp.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -15,17 +14,14 @@ namespace LotoApp.Services.Implementations
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-
-        private readonly IConfiguration _configuration;
         private readonly JwtConfig _jwtConfig;
 
-        public UserService(UserManager<ApplicationUser> userManager, IConfiguration configuration, IOptions<JwtConfig> jwtConfig,
+        public UserService(UserManager<ApplicationUser> userManager, IOptions<JwtConfig> jwtConfig,
              RoleManager<IdentityRole> roleManager)
         {
-            _userManager = userManager;
-            _roleManager = roleManager;
-            _configuration = configuration;
-            _jwtConfig = jwtConfig.Value;
+            _userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
+            _roleManager = roleManager ?? throw new ArgumentNullException(nameof(roleManager));
+            _jwtConfig = jwtConfig.Value ?? throw new ArgumentNullException(nameof(jwtConfig));
         }
 
         public async Task<UserManagerResponse> LoginUserAsync(LoginViewModel model)

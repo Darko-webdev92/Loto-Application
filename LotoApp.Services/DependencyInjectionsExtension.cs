@@ -24,12 +24,5 @@ namespace LotoApp.Utilities
 
             return services;
         }
-
-
-        public static IServiceCollection RegisterRepositories(this IServiceCollection services)
-        {
-
-            return services;
-        }
     }
 }

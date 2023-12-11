@@ -10,7 +10,7 @@ namespace LotoApp.DAL.Implementations
 
         public DrawRepository(AppDbContext appDbContext)
         {
-            _appDbContext = appDbContext;
+            _appDbContext = appDbContext ?? throw new ArgumentNullException(nameof(appDbContext));
         }
 
         public async Task<IEnumerable<Draw>> GetAll()
