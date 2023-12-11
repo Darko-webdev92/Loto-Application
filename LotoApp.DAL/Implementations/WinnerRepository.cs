@@ -17,5 +17,10 @@ namespace LotoApp.DAL.Implementations
             _appDbContext.Winners.AddRange(winners);
             await _appDbContext.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<Winner>> GetWinners()
+        {
+            return _appDbContext.Winners;
+        }
     }
 }

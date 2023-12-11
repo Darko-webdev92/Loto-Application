@@ -12,7 +12,7 @@ namespace LotoApp.Controllers
         private readonly IAdminService _adminService;
         public AdminController(IAdminService adminService)
         {
-            _adminService = adminService;
+            _adminService = adminService ?? throw new ArgumentNullException(nameof(adminService));
         }
 
         [HttpPost("StartSession")]
