@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotoApp.DAL", "LotoApp.DAL\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotoApp.Services", "LotoApp.Services\LotoApp.Services.csproj", "{88FE66C4-C5CE-4805-9ADF-A67F30E940B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotoApp.Configurations", "LotoApp.Configurations\LotoApp.Configurations.csproj", "{8983AE9B-25C5-4298-AE01-89BB30832BB4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotoApp.Models", "LotoApp.Models\LotoApp.Models.csproj", "{44634E7C-D52F-4917-98E6-245551D1644C}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{88FE66C4-C5CE-4805-9ADF-A67F30E940B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88FE66C4-C5CE-4805-9ADF-A67F30E940B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88FE66C4-C5CE-4805-9ADF-A67F30E940B4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8983AE9B-25C5-4298-AE01-89BB30832BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8983AE9B-25C5-4298-AE01-89BB30832BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8983AE9B-25C5-4298-AE01-89BB30832BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8983AE9B-25C5-4298-AE01-89BB30832BB4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{44634E7C-D52F-4917-98E6-245551D1644C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{44634E7C-D52F-4917-98E6-245551D1644C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44634E7C-D52F-4917-98E6-245551D1644C}.Release|Any CPU.ActiveCfg = Release|Any CPU

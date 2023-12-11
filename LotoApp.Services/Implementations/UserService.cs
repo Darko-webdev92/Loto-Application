@@ -14,7 +14,6 @@ namespace LotoApp.Services.Implementations
     public class UserService : IUserService
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        //private readonly RoleManager<ApplicationUserDto> _roleManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
         private readonly IConfiguration _configuration;
