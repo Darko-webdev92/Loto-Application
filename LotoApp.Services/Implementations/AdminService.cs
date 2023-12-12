@@ -29,7 +29,8 @@ namespace LotoApp.Services.Implementations
         public async Task StartSession()
         {
 
-            var draws = await _drawRepository.GetLast();
+            //var draws = await _drawRepository.GetLast();
+            var draws = await _drawRepository.GetLastOrDefault();
 
             if (draws != null)
             {
@@ -46,7 +47,8 @@ namespace LotoApp.Services.Implementations
             };
             try
             {
-                _adminRepository.Add(model);
+                //_adminRepository.Add(model);
+               await _adminRepository.Create(model);
 
             }catch (Exception ex)
             {
@@ -56,7 +58,8 @@ namespace LotoApp.Services.Implementations
 
         public async Task<GameManagerResponse> CheckSession()
         {
-            var session = await _drawRepository.GetLast();
+            //var session = await _drawRepository.GetLast();
+            var session = await _drawRepository.GetLastOrDefault();
 
             if (session != null)
             {
@@ -78,7 +81,7 @@ namespace LotoApp.Services.Implementations
         }
         public async Task EndSession()
         {
-            var session = await _drawRepository.GetLast();
+            var session = await _drawRepository.GetLastOrDefault();
 
             if (session != null)
             {
@@ -148,7 +151,7 @@ namespace LotoApp.Services.Implementations
         {
             int[] nums = null;
 
-            var draw = await _drawRepository.GetLast();
+            var draw = await _drawRepository.GetLastOrDefault();
 
             if (draw != null)
             {
@@ -185,7 +188,7 @@ namespace LotoApp.Services.Implementations
         {
             List<WinnerViewModel> winnersViewModel = new List<WinnerViewModel>();
             List<Winner> winners = new List<Winner>();
-            var lastSession = await _drawRepository.GetLast();
+            var lastSession = await _drawRepository.GetLastOrDefault();
 
             if (ticket != null)
             {
@@ -247,7 +250,8 @@ namespace LotoApp.Services.Implementations
 
             winners = winnersViewModel.Select(x => WinnerMapper.ToWinnerDto(x)).ToList();
 
-            await _winnerRepository.AddWinners(winners);
+            //await _winnerRepository.AddWinners(winners);
+            await _winnerRepository.AddRange(winners);
 
             return winnersViewModel;
         }

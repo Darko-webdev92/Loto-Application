@@ -10,5 +10,6 @@ namespace LotoApp.DAL.Interfaces
         Task Create(TEntity entity);
         Task<TEntity> Update(TEntity entity);
         Task Delete(TId id);
+        Task AddRange(List<TEntity> entity);
     }
 }

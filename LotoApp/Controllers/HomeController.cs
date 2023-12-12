@@ -1,5 +1,4 @@
-﻿using LotoApp.DAL;
-using LotoApp.Services.Interfaces;
+﻿using LotoApp.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LotoApp.Controllers

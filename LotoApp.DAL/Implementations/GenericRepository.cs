@@ -1,15 +1,10 @@
 ﻿using LotoApp.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LotoApp.DAL.Implementations
 {
-    public class GenericRepository<TEntity, TId> : IGenericRepository<TEntity, TId>  where TEntity : class where TId : IEquatable<TId>
+    public class GenericRepository<TEntity, TId> : IGenericRepository<TEntity, TId> where TEntity : class where TId : IEquatable<TId>
     {
         protected readonly AppDbContext _appDbContext;
 
@@ -18,10 +13,16 @@ namespace LotoApp.DAL.Implementations
             _appDbContext = appDbContext ?? throw new ArgumentNullException(nameof(appDbContext));
         }
 
+        public async Task AddRange(List<TEntity> entity)
+        {
+            await _appDbContext.Set<TEntity>().AddRangeAsync(entity);
+            await _appDbContext.SaveChangesAsync();
+        }
+
         public async Task Create(TEntity entity)
         {
             await _appDbContext.Set<TEntity>().AddAsync(entity);
-            await _appDbContext.SaveChangesAsync();        
+            await _appDbContext.SaveChangesAsync();
         }
 
         public async Task Delete(TId id)
@@ -41,10 +42,12 @@ namespace LotoApp.DAL.Implementations
             {
                 query = query.Where(filter);
             }
-            foreach (var includeProperty in includeProperties.Split
-                    (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            if (includeProperties != null)
             {
-                query = query.Include(includeProperty);
+                foreach (var includeProperty in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProperty);
+                }
             }
 
             if (orderBy != null)
@@ -77,15 +80,16 @@ namespace LotoApp.DAL.Implementations
                     query = query.Include(includeProp);
                 }
             }
-
+            
             return await query.LastOrDefaultAsync();
         }
 
         public async Task<TEntity> Update(TEntity entity)
         {
             _appDbContext.Set<TEntity>().Update(entity);
-                await _appDbContext.SaveChangesAsync();
+            await _appDbContext.SaveChangesAsync();
             return entity;
         }
+
     }
 }

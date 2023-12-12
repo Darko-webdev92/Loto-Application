@@ -1,8 +1,6 @@
-﻿using LotoApp.Models.Entities;
-using LotoApp.Models.ViewModels;
+﻿using LotoApp.Models.ViewModels;
 using LotoApp.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
