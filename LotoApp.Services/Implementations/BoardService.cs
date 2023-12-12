@@ -16,7 +16,8 @@ namespace LotoApp.Services.Implementations
 
         public async Task<IEnumerable<WinnerViewModel>> GetAllWinners()
         {
-            var winners = await _winnerRepository.GetWinners();
+            //var winners = await _winnerRepository.GetWinners();
+            var winners = await _winnerRepository.GetAll();
             var data = winners.Select(x => WinnerMapper.ToWinner(x));
             return data;
         }

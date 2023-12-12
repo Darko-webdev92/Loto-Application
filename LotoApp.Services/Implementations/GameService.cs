@@ -1,5 +1,4 @@
-﻿using LotoApp.DAL.Implementations;
-using LotoApp.DAL.Interfaces;
+﻿using LotoApp.DAL.Interfaces;
 using LotoApp.Models.Entities;
 using LotoApp.Models.ViewModels;
 using LotoApp.Services.Interfaces;
@@ -11,7 +10,7 @@ namespace LotoApp.Services.Implementations
     {
         private readonly IDrawRepository _drawRepository;
         private readonly ITicketRepository _ticketRepository;
-
+        
         public GameService(IDrawRepository drawRepository, ITicketRepository ticketRepository)
         {
             _drawRepository = drawRepository ?? throw new ArgumentNullException(nameof(drawRepository)); 
@@ -21,8 +20,8 @@ namespace LotoApp.Services.Implementations
         public async Task<GameManagerResponse> EnterTicket(TicketViewModel model, string userId)
         {
             //var session = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
-            var session = await _drawRepository.GetLast();
-
+            //var session = await _drawRepository.GetLast();
+            var session = await _drawRepository.GetLastOrDefault();
             if (session != null)
             {
                 if (session.IsSessionActive)
@@ -55,7 +54,8 @@ namespace LotoApp.Services.Implementations
                             UserId = userId,
                             Session = session.Id
                         };
-                        await _ticketRepository.Add(ticket);
+                        //await _ticketRepository.Add(ticket);
+                        await _ticketRepository.Create(ticket);
 
                         return new GameManagerResponse
                         {
