@@ -16,9 +16,9 @@ namespace LotoApp.Controllers
         }
 
         [HttpPost("StartSession")]
-        public IActionResult StartSession()
+        public async Task<IActionResult> StartSession()
         {
-            _adminService.StartSession();
+            await _adminService.StartSession();
             return Ok("Session is activated");
         }
 

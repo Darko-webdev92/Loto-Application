@@ -2,9 +2,9 @@
 
 namespace LotoApp.DAL.Interfaces
 {
-    public interface ITicketRepository
+    public interface ITicketRepository : IGenericRepository<Ticket, Guid>
     {
-        Task<IEnumerable<Ticket>> GetAll();
-        Task Add(Ticket entity);
+        //Task<IEnumerable<Ticket>> GetAll();
+        //Task Add(Ticket entity);
     }
 }

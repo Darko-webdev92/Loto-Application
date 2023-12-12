@@ -1,5 +1,6 @@
 ﻿using LotoApp.DAL.Interfaces;
 using LotoApp.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace LotoApp.DAL.Implementations
 {
@@ -15,7 +16,7 @@ namespace LotoApp.DAL.Implementations
         public async Task Add(Draw entity)
         {
             _appDbContext.Draws.Add(entity);
-            _appDbContext.SaveChangesAsync();
+           await _appDbContext.SaveChangesAsync();
         }
     }
 }

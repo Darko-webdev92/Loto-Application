@@ -11,7 +11,7 @@ namespace LotoApp.Services.Implementations
     {
         private readonly IDrawRepository _drawRepository;
         private readonly ITicketRepository _ticketRepository;
-
+        
         public GameService(IDrawRepository drawRepository, ITicketRepository ticketRepository)
         {
             _drawRepository = drawRepository ?? throw new ArgumentNullException(nameof(drawRepository)); 
@@ -55,7 +55,8 @@ namespace LotoApp.Services.Implementations
                             UserId = userId,
                             Session = session.Id
                         };
-                        await _ticketRepository.Add(ticket);
+                        //await _ticketRepository.Add(ticket);
+                        await _ticketRepository.Create(ticket);
 
                         return new GameManagerResponse
                         {

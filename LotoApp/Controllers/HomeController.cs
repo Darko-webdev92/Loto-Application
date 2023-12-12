@@ -15,9 +15,9 @@ namespace LotoApp.Controllers
         }
 
         [HttpGet("Board")]
-        public IActionResult WinnersBoard()
+        public async Task<IActionResult> WinnersBoard()
         {           
-            var data = _boardService.GetAllWinners();
+            var data = await _boardService.GetAllWinners();
             return Ok(data);
         }
     }

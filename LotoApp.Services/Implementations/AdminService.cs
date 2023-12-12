@@ -44,8 +44,14 @@ namespace LotoApp.Services.Implementations
                 StartSession = DateTime.Now,
                 IsSessionActive = true,
             };
+            try
+            {
+                _adminRepository.Add(model);
 
-            await _adminRepository.Add(model);
+            }catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public async Task<GameManagerResponse> CheckSession()
