@@ -6,11 +6,11 @@ namespace LotoApp.Services.Interfaces
 {
     public interface IAdminService
     {
-        Task StartSession();
+        Task<GameManagerResponse> StartSession();
         Task<GameManagerResponse> CheckSession();
-        Task EndSession();
+        Task<GameManagerResponse> EndSession();
         Task<List<WinnerViewModel>> StartDraw();
         Task<DrawnNumbers> DrawNumbers();
-        Task<List<WinnerViewModel>> WinningTickets(List<Ticket> ticket, DrawnNumbers drawnNumbers);
+        //Task<List<WinnerViewModel>> WinningTickets(List<Ticket> ticket, DrawnNumbers drawnNumbers);
     }
 }
