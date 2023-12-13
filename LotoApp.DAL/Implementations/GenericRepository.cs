@@ -1,5 +1,6 @@
 ﻿using LotoApp.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq.Expressions;
 
 namespace LotoApp.DAL.Implementations
@@ -65,23 +66,23 @@ namespace LotoApp.DAL.Implementations
             return await _appDbContext.Set<TEntity>().FindAsync(id);
         }
 
-        public async Task<TEntity> GetLastOrDefault(Expression<Func<TEntity, bool>> filter = null, string includeProperties = null)
+        public async Task<TEntity> GetLastOrDefault()
         {
-            IQueryable<TEntity> query = _appDbContext.Set<TEntity>();
-            if (filter != null)
-            {
-                query = query.Where(filter);
-            }
+            //IQueryable<TEntity> query = _appDbContext.Set<TEntity>();
+            //if (filter != null)
+            //{
+            //    query = query.Where(filter);
+            //}
 
-            if (includeProperties != null)
-            {
-                foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
-                {
-                    query = query.Include(includeProp);
-                }
-            }
-            
-            return await query.LastOrDefaultAsync();
+            //if (includeProperties != null)
+            //{
+            //    foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            //    {
+            //        query = query.Include(includeProp);
+            //    }
+            //}
+
+            return _appDbContext.Set<TEntity>().OrderBy(x => x).LastOrDefault();
         }
 
         public async Task<TEntity> Update(TEntity entity)
