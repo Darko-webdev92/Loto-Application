@@ -26,17 +26,18 @@ namespace LotoApp.Services.Implementations
             _userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
         }
 
-        public async Task StartSession()
+        public async Task<GameManagerResponse> StartSession()
         {
-
-            //var draws = await _drawRepository.GetLast();
             var draws = await _drawRepository.GetLastOrDefault();
 
             if (draws != null)
             {
                 if (draws.IsSessionActive == true)
                 {
-                    throw new Exception("One session is already active");
+                    return new GameManagerResponse
+                    {
+                        Message = "There is an active session",
+                    };
                 }
             }
 
@@ -45,20 +46,18 @@ namespace LotoApp.Services.Implementations
                 StartSession = DateTime.Now,
                 IsSessionActive = true,
             };
-            try
-            {
-                //_adminRepository.Add(model);
-               await _adminRepository.Create(model);
 
-            }catch (Exception ex)
+            await _adminRepository.Create(model);
+
+            return new GameManagerResponse
             {
-                throw new Exception(ex.Message);
-            }
+                Message = "Session is activated",
+
+            };
         }
 
         public async Task<GameManagerResponse> CheckSession()
         {
-            //var session = await _drawRepository.GetLast();
             var session = await _drawRepository.GetLastOrDefault();
 
             if (session != null)
@@ -68,18 +67,17 @@ namespace LotoApp.Services.Implementations
                     return new GameManagerResponse
                     {
                         Message = "There is an active session",
-                        IsActive = true,
 
                     };
                 }
             }
+
             return new GameManagerResponse
             {
                 Message = "There is no active session",
-                IsActive = false,
             };
         }
-        public async Task EndSession()
+        public async Task<GameManagerResponse> EndSession()
         {
             var session = await _drawRepository.GetLastOrDefault();
 
@@ -92,16 +90,17 @@ namespace LotoApp.Services.Implementations
 
                     await _drawRepository.Update(session);
                 }
-                else
+
+                return new GameManagerResponse
                 {
-                    var message = new GameManagerResponse
-                    {
-                        Message = "There is no active session",
-                        IsActive = false,
-                    };
-                    throw new Exception(message.Message);
-                }
+                    Message = "The session is over",
+                };
             }
+
+            return new GameManagerResponse
+            {
+                Message = "There is no active session",
+            };
         }
 
         public async Task<List<WinnerViewModel>> StartDraw()
@@ -114,7 +113,7 @@ namespace LotoApp.Services.Implementations
             var tickets = alltickets.Where(x => x.TicketPurchased >= drawnNumbers.StartSession && x.TicketPurchased <= drawnNumbers.EndSession).ToList();
             winners = await WinningTickets(tickets, drawnNumbers);
 
-            await StartSession();
+            //await StartSession();
             return winners;
         }
 
@@ -170,10 +169,6 @@ namespace LotoApp.Services.Implementations
 
                     await _drawRepository.Update(draw);
                 }
-                else
-                {
-                    throw new Exception("The Session must be active");
-                }
             }
             //return nums;
             return new DrawnNumbers
@@ -184,7 +179,7 @@ namespace LotoApp.Services.Implementations
             };
         }
 
-        public async Task<List<WinnerViewModel>> WinningTickets(List<Ticket> ticket, DrawnNumbers drawnNumbers)
+        private async Task<List<WinnerViewModel>> WinningTickets(List<Ticket> ticket, DrawnNumbers drawnNumbers)
         {
             List<WinnerViewModel> winnersViewModel = new List<WinnerViewModel>();
             List<Winner> winners = new List<Winner>();

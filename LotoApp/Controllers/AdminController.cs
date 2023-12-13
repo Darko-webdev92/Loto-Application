@@ -18,8 +18,8 @@ namespace LotoApp.Controllers
         [HttpPost("StartSession")]
         public async Task<IActionResult> StartSession()
         {
-            await _adminService.StartSession();
-            return Ok("Session is activated");
+            var model = await _adminService.StartSession();
+            return Ok(model);
         }
 
         [HttpPut("StartDraw")]
