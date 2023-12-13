@@ -25,13 +25,29 @@ namespace LotoApp.Controllers
         [HttpPut("StartDraw")]
         public async Task<IActionResult> StartDraw()
         {
-           var winners = await _adminService.StartDraw();
-            if(winners.Count > 0)
+            var winners = await _adminService.StartDraw();
+            if (winners.Count > 0)
             {
                 return Ok(winners);
 
             }
             return Ok("There are no winners this session");
+        }
+
+        [HttpGet("CheckSession")]
+        public async Task<IActionResult> CheckSession()
+        {
+            var model = await _adminService.CheckSession();
+
+            return Ok(model);
+        }
+
+        [HttpPut("EndSession")]
+        public async Task<IActionResult> EndSession()
+        {
+            await _adminService.EndSession();
+
+            return Ok();
         }
     }
 }
