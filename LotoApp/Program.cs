@@ -40,7 +40,7 @@ var secret = Encoding.ASCII.GetBytes(appSettings.Secret);
 
 builder.Services.AddAuthentication(options =>
 {
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
 })

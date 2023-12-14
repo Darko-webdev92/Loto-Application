@@ -11,7 +11,7 @@ namespace LotoApp.Controllers
         private readonly IUserService _userService;
         public AuthController(IUserService userService)
         {
-            _userService = userService ?? throw new ArgumentNullException(nameof(userService)); 
+            _userService = userService ?? throw new ArgumentNullException(nameof(userService));
         }
 
         [HttpPost("Register")]
@@ -25,9 +25,8 @@ namespace LotoApp.Controllers
                 {
                     return Ok(result); // Status code 200
                 }
-                return BadRequest(result); 
             }
-            return BadRequest("Some properties are not valid"); // Status code 400
+            return BadRequest(model);
         }
 
         [HttpPost("Login")]

@@ -13,14 +13,11 @@ namespace LotoApp.Services.Implementations
     public class UserService : IUserService
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly JwtConfig _jwtConfig;
 
-        public UserService(UserManager<ApplicationUser> userManager, IOptions<JwtConfig> jwtConfig,
-             RoleManager<IdentityRole> roleManager)
+        public UserService(UserManager<ApplicationUser> userManager, IOptions<JwtConfig> jwtConfig)
         {
             _userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
-            _roleManager = roleManager ?? throw new ArgumentNullException(nameof(roleManager));
             _jwtConfig = jwtConfig.Value ?? throw new ArgumentNullException(nameof(jwtConfig));
         }
 
@@ -72,21 +69,6 @@ namespace LotoApp.Services.Implementations
 
         public async Task<UserManagerResponse> RegisterUserAsync(RegisterViewModel model)
         {
-          if(model == null)
-          {
-                throw new NullReferenceException("Please fill the form");
-          }
-
-          if(model.Password != model.ConfirmPassword)
-            {
-                return new UserManagerResponse
-                {
-                    Message = "Confirm password doesn't match the password",
-                    IsSuccess = false,
-                };
-                //throw new Exception("Passwords must match");
-            }
-
             var user = new ApplicationUser
             {
                 Email = model.Email,
@@ -99,12 +81,6 @@ namespace LotoApp.Services.Implementations
 
             if (result.Succeeded)
             {
-                var roleExist = await _roleManager.RoleExistsAsync("User");
-                if (!roleExist)
-                {
-                    var roleResult = await _roleManager.CreateAsync(new IdentityRole("User"));
-
-                }
                 var addRole = await _userManager.AddToRoleAsync(user, "User");
 
                 return new UserManagerResponse
