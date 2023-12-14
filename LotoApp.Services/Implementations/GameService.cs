@@ -19,8 +19,6 @@ namespace LotoApp.Services.Implementations
 
         public async Task<GameManagerResponse> EnterTicket(TicketViewModel model, string userId)
         {
-            //var session = _appDbContext.Draws.OrderBy(x => x.Id).LastOrDefault();
-            //var session = await _drawRepository.GetLast();
             var session = await _drawRepository.GetLastOrDefault();
             if (session != null)
             {
@@ -54,7 +52,6 @@ namespace LotoApp.Services.Implementations
                             UserId = userId,
                             Session = session.Id
                         };
-                        //await _ticketRepository.Add(ticket);
                         await _ticketRepository.Create(ticket);
 
                         return new GameManagerResponse
