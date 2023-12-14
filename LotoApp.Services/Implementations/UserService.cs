@@ -15,7 +15,7 @@ namespace LotoApp.Services.Implementations
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly JwtConfig _jwtConfig;
 
-        public UserService(UserManager<ApplicationUser> userManager, IOptions<JwtConfig> jwtConfig,)
+        public UserService(UserManager<ApplicationUser> userManager, IOptions<JwtConfig> jwtConfig)
         {
             _userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
             _jwtConfig = jwtConfig.Value ?? throw new ArgumentNullException(nameof(jwtConfig));
