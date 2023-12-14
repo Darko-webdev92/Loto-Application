@@ -6,7 +6,7 @@ using System.Security.Claims;
 
 namespace LotoApp.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     [Authorize(Roles = "User")]
     public class GameController : ControllerBase

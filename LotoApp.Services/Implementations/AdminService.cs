@@ -112,7 +112,6 @@ namespace LotoApp.Services.Implementations
             var tickets = alltickets.Where(x => x.TicketPurchased >= drawnNumbers.StartSession && x.TicketPurchased <= drawnNumbers.EndSession).ToList();
             winners = await WinningTickets(tickets, drawnNumbers);
 
-            //await StartSession();
             return winners;
         }
 
@@ -169,7 +168,6 @@ namespace LotoApp.Services.Implementations
                     await _drawRepository.Update(draw);
                 }
             }
-            //return nums;
             return new DrawnNumbers
             {
                 EndSession = draw.EndSession,

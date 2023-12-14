@@ -113,7 +113,6 @@ namespace LotoApp.Services.Implementations
                     }
                 ),
                 Expires = DateTime.UtcNow.AddDays(3),
-                //SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
             SecurityToken token = tokenHandler.CreateToken(tokenDescriptior);

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LotoApp.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     [Authorize(Roles = "Admin")]
     public class AdminController : ControllerBase
