@@ -23,7 +23,7 @@ namespace LotoApp.Controllers
 
                 if (result.IsSuccess)
                 {
-                    return Ok(result); // Status code 200
+                    return Ok(result);
                 }
             }
             return BadRequest(model);
@@ -42,7 +42,6 @@ namespace LotoApp.Controllers
                 }
                 return BadRequest(result);
             }
-
             return BadRequest("Some properties are not valid");
         }
     }

@@ -45,8 +45,8 @@ namespace LotoApp.Controllers
         [HttpPut("EndSession")]
         public async Task<IActionResult> EndSession()
         {
-            await _adminService.EndSession();
-            return Ok();
+            var model = await _adminService.EndSession();
+            return Ok(model);
         }
     }
 }

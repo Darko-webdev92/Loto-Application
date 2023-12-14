@@ -67,7 +67,6 @@ namespace LotoApp.Services.Implementations
                     return new GameManagerResponse
                     {
                         Message = "There is an active session",
-
                     };
                 }
             }
@@ -245,12 +244,9 @@ namespace LotoApp.Services.Implementations
 
             winners = winnersViewModel.Select(x => WinnerMapper.ToWinnerDto(x)).ToList();
 
-            //await _winnerRepository.AddWinners(winners);
             await _winnerRepository.AddRange(winners);
 
             return winnersViewModel;
         }
-
-
     }
 }
