@@ -10,10 +10,10 @@ namespace LotoApp.Services.Implementations
     {
         private readonly IDrawRepository _drawRepository;
         private readonly ITicketRepository _ticketRepository;
-        
+
         public GameService(IDrawRepository drawRepository, ITicketRepository ticketRepository)
         {
-            _drawRepository = drawRepository ?? throw new ArgumentNullException(nameof(drawRepository)); 
+            _drawRepository = drawRepository ?? throw new ArgumentNullException(nameof(drawRepository));
             _ticketRepository = ticketRepository ?? throw new ArgumentNullException(nameof(ticketRepository));
         }
 
@@ -64,10 +64,13 @@ namespace LotoApp.Services.Implementations
                     }
                     else
                     {
-                        throw new Exception("Numbers must be different");
+                        return new GameManagerResponse
+                        {
+                            Message = "Numbers must be different",
+
+                        };
                     }
                 }
-
             }
             return new GameManagerResponse
             {

@@ -14,6 +14,14 @@ namespace LotoApp.DAL
                 NormalizedName = "Admin".ToUpper()
             };
 
+            IdentityRole AddUserRole = new IdentityRole
+            {
+                Name = "User",
+                NormalizedName = "User".ToUpper()
+            };
+
+            builder.Entity<IdentityRole>().HasData(AddUserRole);
+
             var hasher = new PasswordHasher<ApplicationUser>();
             var user = new ApplicationUser()
             {
