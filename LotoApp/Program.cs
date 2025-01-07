@@ -24,6 +24,7 @@ builder.Services.AddCors();
 
 builder.Services.Configure<JwtConfig>(builder.Configuration.GetSection("JwtConfig"));
 
+DependencyInjectionsExtension.RegisterServices(builder.Services);
 
 // For Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddRoles<IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
@@ -64,7 +65,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-DependencyInjectionsExtension.RegisterServices(builder.Services);
 
 
 var app = builder.Build();
