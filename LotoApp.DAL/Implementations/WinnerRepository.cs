@@ -6,11 +6,11 @@ namespace LotoApp.DAL.Implementations
     //public class WinnerRepository : IWinnerRepository
     public class WinnerRepository : GenericRepository<Winner, Guid>, IWinnerRepository
     {
-        private readonly AppDbContext _appDbContext;
+        //private readonly AppDbContext _appDbContext;
 
         public WinnerRepository(AppDbContext appDbContext) : base(appDbContext)
         {
-            _appDbContext = appDbContext ?? throw new ArgumentNullException(nameof(appDbContext));
+            //_appDbContext = appDbContext ?? throw new ArgumentNullException(nameof(appDbContext));
         }
 
         public async Task AddWinners(IEnumerable<Winner> winners)

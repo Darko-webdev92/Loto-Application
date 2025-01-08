@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LotoApp.DAL
 {
-    public class Seed
+    internal class Seed
     {
-        public void SeedData(ModelBuilder builder)
+        internal void SeedData(ModelBuilder builder)
         {
             IdentityRole role = new IdentityRole 
             {

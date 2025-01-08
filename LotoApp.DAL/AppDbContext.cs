@@ -19,7 +19,7 @@ namespace LotoApp.DAL
         {
             base.OnModelCreating(builder);
 
-            Seed seed = new Seed();
+            var seed = new Seed();
             seed.SeedData(builder);
 
         }

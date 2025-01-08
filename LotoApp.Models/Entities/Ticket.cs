@@ -7,7 +7,7 @@ namespace LotoApp.Models.Entities
         [Key]
         public int Id { get; set; }
 
-        public DateTime TicketPurchased { get; set; }
+        public DateTime TicketPurchased { get; set; } = DateTime.Now;
         public int Session { get; set; }
 
         //Navigation properties

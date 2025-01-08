@@ -27,10 +27,8 @@ namespace LotoApp.Controllers
         {
             var winners = await _adminService.StartDraw();
             if (winners.Count > 0)
-            {
                 return Ok(winners);
 
-            }
             return Ok("There are no winners this session");
         }
 
@@ -38,7 +36,6 @@ namespace LotoApp.Controllers
         public async Task<IActionResult> CheckSession()
         {
             var model = await _adminService.CheckSession();
-
             return Ok(model);
         }
 
