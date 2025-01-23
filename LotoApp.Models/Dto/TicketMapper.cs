@@ -16,17 +16,8 @@ namespace LotoApp.Models.Dto
                 Number_5 = ticket.Number_5,
                 Number_6 = ticket.Number_6,
                 Number_7 = ticket.Number_7,
-                TicketPurchased = ticket.TicketPurchased,
                 UserId = userId,
                 Session = session.Id
-            };
-        }
-
-        public static Ticket ToTicket()
-        {
-            return new Ticket
-            {
-
             };
         }
     }

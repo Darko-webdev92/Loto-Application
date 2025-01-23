@@ -22,10 +22,13 @@ namespace LotoApp.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                var claimsIdentnty = (ClaimsIdentity)User.Identity;
-                var claims = claimsIdentnty.FindFirst(ClaimTypes.NameIdentifier).Value;
-               var result = await _gameService.EnterTicket(model, claims);
-                return Ok(result);
+                if (ModelState.IsValid)
+                {
+                    var claimsIdentnty = (ClaimsIdentity)User.Identity;
+                    var claims = claimsIdentnty?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                    var result = await _gameService.EnterTicket(model, claims);
+                    return Ok(result);
+                }
             }
             return BadRequest();
         }

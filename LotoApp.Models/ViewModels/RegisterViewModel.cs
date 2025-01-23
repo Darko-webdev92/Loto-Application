@@ -16,11 +16,14 @@ namespace LotoApp.Models.ViewModels
 
         [Required]
         [StringLength(30, MinimumLength = 5)]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Required]
-        [StringLength(30, MinimumLength =5)]
+        [StringLength(30, MinimumLength = 5)]
+        [DataType(DataType.Password)]
+        [Compare("Password")]
+        [Display(Name = "Confirm Password")]
         public string ConfirmPassword { get; set; }
-
     }
 }

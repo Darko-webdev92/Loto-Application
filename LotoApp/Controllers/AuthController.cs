@@ -22,9 +22,7 @@ namespace LotoApp.Controllers
                 var result = await _userService.RegisterUserAsync(model);
 
                 if (result.IsSuccess)
-                {
                     return Ok(result);
-                }
             }
             return BadRequest(model);
         }
@@ -42,7 +40,7 @@ namespace LotoApp.Controllers
                 }
                 return BadRequest(result);
             }
-            return BadRequest("Some properties are not valid");
+            return BadRequest("Please enter valid email and password");
         }
     }
 }

@@ -7,7 +7,7 @@ namespace LotoApp.DAL.Implementations
 {
     public class GenericRepository<TEntity, TId> : IGenericRepository<TEntity, TId> where TEntity : class where TId : IEquatable<TId>
     {
-        protected readonly AppDbContext _appDbContext;
+       private protected readonly AppDbContext _appDbContext;
 
         public GenericRepository(AppDbContext appDbContext)
         {

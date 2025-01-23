@@ -27,6 +27,7 @@ namespace LotoApp.Services.Implementations
                     int[] nums = new int[7];
                     int counter = 0;
 
+                    // This is one way, using reflection. The second way is manually like this nums[0] = model.Number_1
                     foreach (PropertyInfo prop in model.GetType().GetProperties())
                     {
                         if (prop.GetValue(model, null).GetType() == typeof(System.Int32))
@@ -35,9 +36,8 @@ namespace LotoApp.Services.Implementations
                             counter++;
                         }
                     }
-
-                    var res = nums.Distinct().Count() == nums.Length;
-                    if (res)
+                    var isAllNumbersDifferent = nums.Distinct().Count() == nums.Length;
+                    if (isAllNumbersDifferent)
                     {
                         Ticket ticket = new Ticket
                         {
@@ -48,7 +48,6 @@ namespace LotoApp.Services.Implementations
                             Number_5 = nums[4],
                             Number_6 = nums[5],
                             Number_7 = nums[6],
-                            TicketPurchased = model.TicketPurchased,
                             UserId = userId,
                             Session = session.Id
                         };
