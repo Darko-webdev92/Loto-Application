@@ -8,7 +8,6 @@ namespace LotoApp.Utilities
 {
     public static class DependencyInjectionsExtension
     {
-
         public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
             services.AddScoped<IUserService, UserService>();

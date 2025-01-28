@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotoApp.Services", "LotoApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotoApp.Models", "LotoApp.Models\LotoApp.Models.csproj", "{44634E7C-D52F-4917-98E6-245551D1644C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotoApp.Tests", "LotoApp.Tests\LotoApp.Tests.csproj", "{3DF4805E-039A-4D88-AB4F-340A3FD8FD33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{44634E7C-D52F-4917-98E6-245551D1644C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44634E7C-D52F-4917-98E6-245551D1644C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44634E7C-D52F-4917-98E6-245551D1644C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DF4805E-039A-4D88-AB4F-340A3FD8FD33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DF4805E-039A-4D88-AB4F-340A3FD8FD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DF4805E-039A-4D88-AB4F-340A3FD8FD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DF4805E-039A-4D88-AB4F-340A3FD8FD33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

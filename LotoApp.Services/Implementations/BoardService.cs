@@ -18,7 +18,7 @@ namespace LotoApp.Services.Implementations
         {
             var winners = await _winnerRepository.GetAll();
             var data = winners.Select(x => WinnerMapper.ToWinner(x));
-            return data;
+            return data; 
         }
     }
 }

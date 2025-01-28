@@ -43,7 +43,6 @@ namespace LotoApp.Services.Implementations
 
             var model = new Draw
             {
-                StartSession = DateTime.Now,
                 IsSessionActive = true,
             };
 
