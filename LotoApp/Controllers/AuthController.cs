@@ -17,30 +17,44 @@ namespace LotoApp.Controllers
         [HttpPost("Register")]
         public async Task<IActionResult> Register([FromBody] RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var result = await _userService.RegisterUserAsync(model);
+                if (ModelState.IsValid)
+                {
+                    var result = await _userService.RegisterUserAsync(model);
 
-                if (result.IsSuccess)
-                    return Ok(result);
+                    if (result.IsSuccess)
+                        return Ok(result);
+                }
+                return BadRequest(model);
             }
-            return BadRequest(model);
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginViewModel model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var result = await _userService.LoginUserAsync(model);
-
-                if (result.IsSuccess)
+                if (ModelState.IsValid)
                 {
-                    return Ok(result);
+                    var result = await _userService.LoginUserAsync(model);
+
+                    if (result.IsSuccess)
+                    {
+                        return Ok(result);
+                    }
+                    return BadRequest(result);
                 }
-                return BadRequest(result);
+                return BadRequest("Please enter valid email and password");
             }
-            return BadRequest("Please enter valid email and password");
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

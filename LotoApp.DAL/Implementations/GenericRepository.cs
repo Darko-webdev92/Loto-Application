@@ -68,20 +68,6 @@ namespace LotoApp.DAL.Implementations
 
         public async Task<TEntity> GetLastOrDefault()
         {
-            //IQueryable<TEntity> query = _appDbContext.Set<TEntity>();
-            //if (filter != null)
-            //{
-            //    query = query.Where(filter);
-            //}
-
-            //if (includeProperties != null)
-            //{
-            //    foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
-            //    {
-            //        query = query.Include(includeProp);
-            //    }
-            //}
-
             return _appDbContext.Set<TEntity>().OrderBy(x => x).LastOrDefault();
         }
 

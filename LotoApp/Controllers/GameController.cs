@@ -20,17 +20,24 @@ namespace LotoApp.Controllers
         [HttpPost("EnterTicket")]
         public async Task<IActionResult> EnterTicket([FromBody] TicketViewModel model)
         {
-            if (User.Identity.IsAuthenticated)
+            try
             {
-                if (ModelState.IsValid)
+                if (User.Identity.IsAuthenticated)
                 {
-                    var claimsIdentnty = (ClaimsIdentity)User.Identity;
-                    var claims = claimsIdentnty?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                    var result = await _gameService.EnterTicket(model, claims);
-                    return Ok(result);
+                    if (ModelState.IsValid)
+                    {
+                        var claimsIdentnty = (ClaimsIdentity)User.Identity;
+                        var claims = claimsIdentnty?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                        var result = await _gameService.EnterTicket(model, claims);
+                        return Ok(result);
+                    }
                 }
+                return BadRequest();
             }
-            return BadRequest();
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
