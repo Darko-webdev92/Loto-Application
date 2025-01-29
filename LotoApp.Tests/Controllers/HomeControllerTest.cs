@@ -9,13 +9,13 @@ namespace YourNamespace.Tests
 {
     public class HomeControllerTests
     {
-        private readonly IBoardService _boardServiceMock;
+        private readonly IBoardService _boardService;
         private readonly HomeController _controller;
 
         public HomeControllerTests()
         {
-            _boardServiceMock = A.Fake<IBoardService>();
-            _controller = new HomeController(_boardServiceMock);
+            _boardService = A.Fake<IBoardService>();
+            _controller = new HomeController(_boardService);
         }
 
         [Fact]
@@ -31,7 +31,7 @@ namespace YourNamespace.Tests
                 SessionId = 2,
             });
 
-            A.CallTo(() => _boardServiceMock.GetAllWinners())
+            A.CallTo(() => _boardService.GetAllWinners())
                    .Returns(Task.FromResult(winners.AsEnumerable()));
 
             // Act
@@ -59,7 +59,7 @@ namespace YourNamespace.Tests
             // Arrange
             var winners = new List<WinnerViewModel>();
 
-            A.CallTo(() => _boardServiceMock.GetAllWinners())
+            A.CallTo(() => _boardService.GetAllWinners())
                    .Returns(Task.FromResult(winners.AsEnumerable()));
 
             // Act

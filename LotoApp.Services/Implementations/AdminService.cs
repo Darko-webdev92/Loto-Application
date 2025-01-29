@@ -101,9 +101,9 @@ namespace LotoApp.Services.Implementations
             };
         }
 
-        public async Task<List<WinnerViewModel>> StartDraw()
+        public async Task<IEnumerable<WinnerViewModel>> StartDraw()
         {
-            List<WinnerViewModel> winners = new List<WinnerViewModel>();
+            IEnumerable<WinnerViewModel> winners;
 
             DrawnNumbers drawnNumbers = await DrawNumbers();
 
@@ -121,22 +121,22 @@ namespace LotoApp.Services.Implementations
 
             for (int i = 0; i < nums.Length; i++)
             {
-                bool exist = true;//we create a boolean is random number exist and start with true for while loop
+                bool exist = true; 
                 while (exist)
                 {
-                    exist = false;//we change it because until we didn't see the same value on array, we accept as non-exist.
+                    exist = false; 
                     int number = rand.Next(1, 37) + 1;
 
                     for (int k = 0; k < i; k++)
-                    {//we check every number until "i" we come.
+                    {
                         if (number == nums[k])
-                        {//if exist we said same value exist
+                        {
                             exist = true;
                             break;
                         }
                     }
                     if (!exist)
-                    {//if same value not exist we save it in our array
+                    {
                         nums[i] = number;
                     }
                 }
@@ -175,7 +175,7 @@ namespace LotoApp.Services.Implementations
             };
         }
 
-        private async Task<List<WinnerViewModel>> WinningTickets(List<Ticket> ticket, DrawnNumbers drawnNumbers)
+        private async Task<IEnumerable<WinnerViewModel>> WinningTickets(List<Ticket> ticket, DrawnNumbers drawnNumbers)
         {
             List<WinnerViewModel> winnersViewModel = new List<WinnerViewModel>();
             List<Winner> winners = new List<Winner>();
@@ -243,7 +243,7 @@ namespace LotoApp.Services.Implementations
 
             await _winnerRepository.AddRange(winners);
 
-            return winnersViewModel;
+            return winnersViewModel.AsEnumerable();
         }
     }
 }
