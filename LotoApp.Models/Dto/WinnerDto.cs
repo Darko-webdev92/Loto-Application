@@ -4,7 +4,7 @@ using LotoApp.Models.ViewModels;
 
 namespace LotoApp.Models.Dto
 {
-    public static class WinnerMapper
+    public static class WinnerDto
     {
         public static Winner ToWinnerDto(WinnerViewModel winner)
         {
@@ -24,7 +24,7 @@ namespace LotoApp.Models.Dto
             };
         }
 
-        public static WinnerViewModel ToWinner(Winner winner)
+        public static WinnerViewModel ToWinnerViewModelDto(Winner winner)
         {
             return new WinnerViewModel
             {

@@ -9,9 +9,12 @@ namespace LotoApp.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IUserService _userService;
-        public AuthController(IUserService userService)
+        private readonly ILogger<AuthController> _logger;
+
+        public AuthController(IUserService userService, ILogger<AuthController> logger)
         {
             _userService = userService ?? throw new ArgumentNullException(nameof(userService));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         [HttpPost("Register")]
@@ -30,7 +33,8 @@ namespace LotoApp.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                _logger.LogError(ex, "An error occurred in Auth/Register");
+                return BadRequest("An error occurred while processing your request.");
             }
         }
 
@@ -53,7 +57,8 @@ namespace LotoApp.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                _logger.LogError(ex, "An error occurred in Auth/Login");
+                return BadRequest("An error occurred while processing your request.");
             }
         }
     }
