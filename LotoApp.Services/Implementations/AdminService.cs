@@ -239,7 +239,7 @@ namespace LotoApp.Services.Implementations
                 }
             }
 
-            winners = winnersViewModel.Select(x => WinnerMapper.ToWinnerDto(x)).ToList();
+            winners = winnersViewModel.Select(x => WinnerDto.ToWinnerDto(x)).ToList();
 
             await _winnerRepository.AddRange(winners);
 

@@ -10,9 +10,12 @@ namespace LotoApp.Controllers
     public class AdminController : ControllerBase
     {
         private readonly IAdminService _adminService;
-        public AdminController(IAdminService adminService)
+        private readonly ILogger<AdminController> _logger;
+
+        public AdminController(IAdminService adminService, ILogger<AdminController> logger)
         {
             _adminService = adminService ?? throw new ArgumentNullException(nameof(adminService));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         [HttpPost("StartSession")]
@@ -25,7 +28,8 @@ namespace LotoApp.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                _logger.LogError(ex, "An error occurred in Admin/StartSession");
+                return BadRequest("An error occurred while processing your request.");
             }
         }
 
@@ -42,7 +46,8 @@ namespace LotoApp.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                _logger.LogError(ex, "An error occurred in Admin/StartDraw");
+                return BadRequest("An error occurred while processing your request.");
             }
         }
 
@@ -56,7 +61,8 @@ namespace LotoApp.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                _logger.LogError(ex, "An error occurred in Admin/CheckSession");
+                return BadRequest("An error occurred while processing your request.");
             }
         }
 
@@ -70,7 +76,8 @@ namespace LotoApp.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                _logger.LogError(ex, "An error occurred in Admin/EndSession");
+                return BadRequest("An error occurred while processing your request.");
             }
         }
     }

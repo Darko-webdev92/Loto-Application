@@ -3,7 +3,7 @@ using LotoApp.Models.ViewModels;
 
 namespace LotoApp.Models.Dto
 {
-    public static class TicketMapper
+    public static class TicketDto
     {
         public static Ticket ToTicketDto(TicketViewModel ticket, string userId, Draw session)
         {
