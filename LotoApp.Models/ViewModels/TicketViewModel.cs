@@ -32,7 +32,5 @@ namespace LotoApp.Models.ViewModels
         [Display(Name = "Number 7")]
         [Range(1, 37, ErrorMessage = "Value for {0} must be between {1} and {2}.")]
         public int Number_7 { get; set; }
-        public DateTime? TicketPurchased { get; set; } = DateTime.Now;
-
     }
 }

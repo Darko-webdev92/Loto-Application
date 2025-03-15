@@ -10,6 +10,7 @@ namespace LotoApp.Utilities
     {
         public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
+            // Services
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IGameService, GameService>();
             services.AddScoped<IAdminService, AdminService>();

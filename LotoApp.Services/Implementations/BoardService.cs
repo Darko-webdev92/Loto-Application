@@ -16,7 +16,6 @@ namespace LotoApp.Services.Implementations
 
         public async Task<IEnumerable<WinnerViewModel>> GetAllWinners()
         {
-            throw new Exception();
             var winners = await _winnerRepository.GetAll();
             var data = winners.Select(x => WinnerDto.ToWinnerViewModelDto(x));
             return data; 
